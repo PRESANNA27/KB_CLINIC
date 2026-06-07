@@ -1,4 +1,3 @@
-
 /* ============================================================
    KB CLINIC — V2 ENHANCED WEBSITE
    Colors: Cobalt Blue #0057B8 | Teal #00B4A6 | White | Sky
@@ -1497,3 +1496,159 @@ body.mode-internal #hearing-aid {
   .doc-img { height: 260px; }
 }
 
+/* ============================================================
+   MOBILE PERFORMANCE MODE
+   Disables GPU-heavy effects below 768px to achieve 60fps scroll.
+   Targets: backdrop-filter, infinite animations, heavy box-shadows,
+   parallax blurs, hover transforms, continuous marquee/float loops.
+============================================================ */
+
+/* --- 1. Remove continuous infinite animations on mobile --- */
+@media (max-width: 768px) {
+  /* Hero floating blobs — most expensive GPU item */
+  .hs { animation: none !important; opacity: .12; }
+
+  /* Floating info badges */
+  .hfb { animation: none !important; }
+
+  /* Marquee — keep running but reduce GPU cost with translate3d hint */
+  .mq-inner { animation-duration: 40s; }
+
+  /* Reviews auto-scroll — keep running, already uses transform */
+  .rv-track { animation-duration: 44s; }
+
+  /* WhatsApp pulse — simplify to static shadow */
+  .f-wa { animation: none !important; box-shadow: 0 4px 18px rgba(37,211,102,.5); }
+
+  /* Floating medical icon decorators */
+  .med-float { animation: none !important; display: none; }
+
+  /* Mode badge cinema animation — not needed on mobile */
+  .mode-badge { display: none !important; }
+
+  /* Progress bar — still animate but skip GPU-heavy keyframe variants */
+  .prog-fill { transition: width 0.9s ease-out; }
+}
+
+/* --- 2. Replace backdrop-filter blur with solid fallback on mobile --- */
+@media (max-width: 768px) {
+  /* Nav: blur causes main-thread stalls during scroll */
+  nav {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(255,255,255,.98) !important;
+  }
+  .mob-nav {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(255,255,255,.99) !important;
+  }
+  /* Booking & modal overlays */
+  .bk-ov {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(0,50,130,.75) !important;
+  }
+  .md-ov {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(0,50,130,.78) !important;
+  }
+  #condMd {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(10,25,60,.85) !important;
+  }
+  /* Specialty bar */
+  .sp-bar {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(255,255,255,.97) !important;
+  }
+  /* Doc reg badge */
+  .doc-reg {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(255,255,255,.96) !important;
+  }
+  /* Facility tag */
+  .fac-tag {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  /* Secondary button */
+  .btn-s {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: var(--white) !important;
+  }
+  /* Mode bar */
+  #modeBar {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(255,255,255,.99) !important;
+  }
+}
+
+/* --- 3. Disable expensive hover transforms on touch screens --- */
+@media (hover: none) and (max-width: 768px) {
+  .doc-card:hover,
+  .svc-card:hover,
+  .fac-card:hover,
+  .assoc-card:hover,
+  .wc-card:hover,
+  .prev-tip-card:hover,
+  .sp-cond-item:hover,
+  .sp-svc-card:hover {
+    transform: none !important;
+    box-shadow: var(--sh) !important;
+  }
+  .doc-card:hover .doc-img img,
+  .fac-card:hover .fac-img img { transform: none !important; }
+  .svc-card:hover::before { transform: scaleX(0) !important; }
+  .svc-card:hover .svc-icon-ring { transform: none !important; }
+  .btn-p:hover, .btn-s:hover, .btn-full:hover,
+  .doc-btn:hover, .f-wa:hover, .f-call:hover {
+    transform: none !important;
+  }
+  /* Prevent 300ms tap delay */
+  a, button { touch-action: manipulation; }
+}
+
+/* --- 4. Reduce shadow depth on mobile (heavy shadows = compositing layers) --- */
+@media (max-width: 768px) {
+  :root {
+    --sh:  0 4px 16px rgba(0,87,184,.10);
+    --sh2: 0 8px 28px rgba(0,87,184,.14);
+  }
+  /* Hero shapes — heavy filter:blur; reduce opacity, remove blur */
+  .hs { filter: none !important; opacity: .08 !important; }
+}
+
+/* --- 5. Promote scroll-heavy elements to their own compositor layer --- */
+@media (max-width: 768px) {
+  .mq-inner,
+  .rv-track,
+  nav,
+  .floats {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+  /* Scroll-reveal elements: simpler transition */
+  .rv, .rv-l, .rv-r, .rv-s {
+    transition: opacity .4s ease, transform .4s ease !important;
+  }
+}
+
+/* --- 6. prefers-reduced-motion: kill all motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .rv, .rv-l, .rv-r, .rv-s {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
