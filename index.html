@@ -3,6 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ── FOUC Prevention + Page Loader ── Must be first style in document ── -->
+<style>
+html{background:#f0f6ff}
+body{visibility:hidden}
+#kb-loader{
+  visibility:visible;
+  position:fixed;inset:0;z-index:999999;
+  background:linear-gradient(145deg,#f0f6ff 0%,#e6f2ff 50%,#edfaf8 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  transition:opacity .65s ease,visibility .65s ease;
+  opacity:1;
+}
+#kb-loader.kbl-out{opacity:0;visibility:hidden}
+.kbl-wrap{position:relative;width:110px;height:110px;margin-bottom:26px;animation:kblFadeUp .4s ease both}
+.kbl-ring{position:absolute;inset:0;border-radius:50%;border:3px solid transparent;animation:kblSpin 1.4s linear infinite}
+.kbl-r1{border-top-color:#0057B8;border-right-color:rgba(0,87,184,.12);border-bottom-color:rgba(0,87,184,.12);border-left-color:rgba(0,87,184,.12);filter:drop-shadow(0 0 9px rgba(0,87,184,.4))}
+.kbl-r2{inset:10px;border-top-color:transparent;border-right-color:transparent;border-bottom-color:#00B4A6;border-left-color:#00B4A6;animation-duration:1s;animation-direction:reverse;filter:drop-shadow(0 0 7px rgba(0,180,166,.38))}
+.kbl-logo{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;animation:kblPulse 2.4s ease-in-out infinite}
+.kbl-logo img{width:52px;height:52px;object-fit:contain;border-radius:10px}
+.kbl-name{font-family:system-ui,-apple-system,sans-serif;font-size:1.25rem;font-weight:800;color:#0d1b3e;letter-spacing:.04em;text-align:center;animation:kblFadeUp .4s .1s ease both}
+.kbl-sub{font-family:system-ui,-apple-system,sans-serif;font-size:.7rem;color:#6b7280;letter-spacing:.12em;text-transform:uppercase;text-align:center;margin-top:4px;margin-bottom:30px;animation:kblFadeUp .4s .18s ease both}
+.kbl-bar{width:160px;height:3px;background:rgba(0,87,184,.1);border-radius:99px;overflow:hidden;animation:kblFadeUp .4s .25s ease both}
+.kbl-bar-fill{height:100%;background:linear-gradient(90deg,#0057B8,#00B4A6);border-radius:99px;animation:kblProgress 2.4s ease-in-out forwards}
+@keyframes kblSpin{to{transform:rotate(360deg)}}
+@keyframes kblPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+@keyframes kblFadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes kblProgress{0%{width:0}35%{width:48%}70%{width:80%}100%{width:96%}}
+</style>
 <title>KB Clinic | Best ENT Doctor, General Physician &amp; Diagnostics Centre in Karaikal</title>
 <meta name="description" content="KB Clinic Karaikal offers ENT care, General Physician consultation, Diabetes management, Hearing Aid services and Bala Diagnostics. Consult top doctors in Karaikal.">
 <meta name="keywords" content="Best ENT Doctor Karaikal, Top ENT Doctor Karaikal, ENT Specialist Karaikal, Best General Physician Karaikal, Best Diabetologist Karaikal, Best Clinic Karaikal, Multi Speciality Clinic Karaikal, Hearing Aid Centre Karaikal, Best Hearing Aid Centre Karaikal, Best Lab Karaikal, Diagnostics Centre Karaikal, Bala Diagnostics Karaikal, Health Checkup Karaikal, KB Clinic Karaikal, Internal Medicine Doctor Karaikal, vertigo treatment Karaikal, sinusitis Karaikal, Tirunallar, Neravy, Nagore, Nagapattinam, Thirumalairayanpattinam, Karaikal District">
@@ -36,9 +64,16 @@
 <!-- Preconnect for performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<!-- Preload critical above-the-fold assets -->
+<link rel="preload" href="assets/images/icons/logo.webp" as="image" fetchpriority="high">
+<link rel="preload" href="assets/images/banners/hero-clinic-main.webp" as="image" fetchpriority="high">
+<link rel="preload" href="assets/images/doctors/doctor-ganesh-bala.webp" as="image">
+<link rel="preload" href="assets/images/doctors/doctor-ramesh-bala.webp" as="image">
+<link rel="preload" href="assets/css/kb-clinic.min.css" as="style">
+<!-- Critical stylesheets (blocking — loader masks render while these parse) -->
+<link rel="stylesheet" href="assets/css/kb-clinic.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-<link rel="preload" href="assets/css/kb-clinic.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="assets/css/kb-clinic.min.css"></noscript>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <!-- ===== STRUCTURED DATA / JSON-LD ===== -->
@@ -299,6 +334,20 @@
 </script>
 </head>
 <body>
+
+<!-- ======= KB CLINIC PAGE LOADER ======= -->
+<div id="kb-loader" role="status" aria-label="Loading KB Clinic website" aria-live="polite">
+  <div class="kbl-wrap">
+    <div class="kbl-ring kbl-r1"></div>
+    <div class="kbl-ring kbl-r2"></div>
+    <div class="kbl-logo">
+      <img src="assets/images/icons/logo.webp" alt="KB Clinic" width="52" height="52">
+    </div>
+  </div>
+  <div class="kbl-name">KB Clinic</div>
+  <div class="kbl-sub">Towards Excellence In Health Care</div>
+  <div class="kbl-bar"><div class="kbl-bar-fill"></div></div>
+</div>
 
 <!-- BACKGROUND CANVAS -->
 <canvas id="bgCanvas"></canvas>
@@ -2322,15 +2371,13 @@
   </div>
 </section>
 
-<!-- ======= FOOTER ======= -->
 <footer role="contentinfo" aria-label="KB Clinic Footer – Contact, Address and Quick Links">
   <div class="ft-grid">
     <div class="ft-brand">
       <img src="assets/images/icons/logo-footer.webp" alt="KB Clinic Karaikal – Best Multi-Specialty Clinic Logo" loading="lazy" width="54" height="54" style="width:54px;height:auto;object-fit:contain;margin-bottom:8px;border-radius:8px;display:block;">
       <span class="fn">KB Clinic</span>
-      <p>Towards Excellence In Health Care.<br>
-      The best multi-specialty clinic in Karaikal, Puducherry (Tamil Nadu). Offering ENT, General Physician, Diabetology, Hearing Aid (A.M. Hearing Aid Centre) and diagnostics (Bala Diagnostics) services under ISO 9001:2015 certified standards. Serving Karaikal, Tirunallar, Neravy, Nagore and Nagapattinam.</p>
-      <address style="font-style:normal;font-size:.78rem;color:var(--sub);margin-top:6px;line-height:1.7;" itemscope itemtype="https://schema.org/MedicalClinic">
+      <p>Towards Excellence In Health Care.<br>A multi-specialty healthcare centre in Karaikal, Puducherry, providing compassionate and quality care under ISO 9001:2015 standards.</p>
+      <address itemscope itemtype="https://schema.org/MedicalClinic" style="font-size:.82rem;color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:14px;font-style:normal;">
         <span itemprop="name" style="display:none">KB Clinic</span>
         <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
           <span itemprop="streetAddress">372, Bharathiyar Road, Kovilpathu</span>,
@@ -2338,8 +2385,8 @@
           <span itemprop="postalCode">609 602</span>,
           <span itemprop="addressRegion">Puducherry</span>
         </span><br>
-        📱 <a href="tel:+918925929922" itemprop="telephone">+91 89259 29922</a> &nbsp;|&nbsp;
-        📞 <a href="tel:04368224815" itemprop="telephone">04368-224815</a>
+        📱 <a href="tel:+918925929922" itemprop="telephone" style="color:rgba(255,255,255,.85);text-decoration:none;">+91 89259 29922</a> &nbsp;|&nbsp;
+        📞 <a href="tel:04368224815" itemprop="telephone" style="color:rgba(255,255,255,.85);text-decoration:none;">04368-224815</a>
       </address>
       <div class="ft-soc">
         <a href="https://wa.me/918925929922" target="_blank" class="sc-btn"><i class="fab fa-whatsapp"></i></a>
@@ -2352,29 +2399,27 @@
       <h4>Quick Links</h4>
       <ul>
         <li><a href="#home">Home</a></li>
-        <li><a href="#speciality" aria-label="ENT Services Karaikal">ENT Services</a></li>
-        <li><a href="#speciality" aria-label="General Physician Karaikal">General Physician</a></li>
-        <li><a href="#speciality" aria-label="Internal Medicine Karaikal">Internal Medicine</a></li>
-        <li><a href="#hearing-aid" aria-label="Best Hearing Aid Centre Karaikal">Hearing Aid Centre</a></li>
-        <li><a href="#doctors" aria-label="Best ENT Doctor and Diabetologist Karaikal">Our Doctors</a></li>
-        <li><a href="#services" aria-label="Medical Services Karaikal">Services</a></li>
-        <li><a href="#contact" aria-label="Contact KB Clinic Karaikal">Contact Us</a></li>
+        <li><a href="#doctors">Our Doctors</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#facilities">Facilities</a></li>
+        <li><a href="#assoc">Associated Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact Us</a></li>
       </ul>
     </div>
     <div class="ft-col">
-      <h4>Contact KB Clinic Karaikal</h4>
+      <h4>Contact</h4>
       <ul>
-        <li><a href="https://www.google.com/maps?q=KB+Clinic+Karaikal" target="_blank" rel="noopener" aria-label="KB Clinic Address on Google Maps">📍 372, Bharathiyar Road, Kovilpathu, Karaikal – 609 602, Puducherry</a></li>
-        <li><a href="tel:+918925929922" aria-label="Call KB Clinic Mobile">📱 89259 29922</a></li>
-        <li><a href="tel:04368224815" aria-label="Call KB Clinic Landline">📞 04368 – 224815</a></li>
-        <li><a href="https://wa.me/918925929922" target="_blank" rel="noopener" aria-label="WhatsApp KB Clinic">💬 WhatsApp: 89259 29922</a></li>
-        <li>🕘 Mon–Sat: 9AM–1PM &amp; 5–8:30PM</li>
-        <li>📅 Sunday: By Appointment Only</li>
+        <li><a href="#">372, Bharathiyar Road, Kovilpathu, Karaikal – 609 602</a></li>
+        <li><a href="tel:+918925929922">📱 89259 29922</a></li>
+        <li><a href="tel:04368224815">📞 04368 – 224815</a></li>
+        <li><a href="#">🕘 Mon–Sat: 9AM–1PM, 5–8:30PM</a></li>
+        <li><a href="#">📅 Sunday: By Appointment</a></li>
       </ul>
     </div>
   </div>
   <div class="ft-bot">
-    <p>© 2025 <strong>KB Clinic</strong> – Best ENT Specialist, General Physician &amp; Diagnostics Centre in Karaikal. 372, Bharathiyar Road, Kovilpathu, Karaikal – 609 602. Tel: 89259 29922. All rights reserved.</p>
+    <p>© 2025 KB Clinic. All rights reserved. Designed for excellence in patient care.</p>
     <div class="iso-tag"><i class="fas fa-certificate"></i>ISO 9001:2015 Certified</div>
   </div>
 </footer>
@@ -2465,5 +2510,30 @@
   </div>
 </div>
 <script src="assets/js/kb-clinic.min.js" defer></script>
+<script>
+/* KB Clinic Page Loader Dismiss */
+(function(){
+  var dismissed=false;
+  function showPage(){
+    if(dismissed)return;
+    dismissed=true;
+    var loader=document.getElementById('kb-loader');
+    if(!loader)return;
+    document.body.style.transition='opacity .5s ease';
+    document.body.style.visibility='visible';
+    document.body.style.opacity='0';
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){
+        document.body.style.opacity='1';
+      });
+    });
+    loader.classList.add('kbl-out');
+    setTimeout(function(){if(loader.parentNode)loader.parentNode.removeChild(loader);},700);
+  }
+  if(document.readyState==='complete'){showPage();}
+  else{window.addEventListener('load',showPage);}
+  setTimeout(showPage,5000);
+})();
+</script>
 </body>
 </html>
