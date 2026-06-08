@@ -1975,6 +1975,187 @@ body{visibility:hidden}
 .prem-btn:hover{opacity:.88;transform:translateY(-2px);}
 </style>
 
+<!-- ======= EXPERT PANEL ======= -->
+<style>
+/* ── Expert Panel Section ── */
+#expert-panel{background:linear-gradient(160deg,#f0f6ff 0%,#e8f4ff 50%,#edfaf9 100%);padding:90px 0;position:relative;overflow:hidden;}
+#expert-panel::before{content:'';position:absolute;top:-120px;right:-120px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(0,87,184,.07) 0%,transparent 70%);pointer-events:none;}
+#expert-panel::after{content:'';position:absolute;bottom:-100px;left:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(0,180,166,.07) 0%,transparent 70%);pointer-events:none;}
+
+.ep-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:36px;margin-top:56px;}
+@media(max-width:900px){.ep-grid{grid-template-columns:1fr;gap:28px;}}
+
+.ep-card{
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border-radius:28px;
+  border:1px solid rgba(255,255,255,.9);
+  overflow:hidden;
+  box-shadow:0 10px 40px rgba(0,61,143,.1),0 2px 8px rgba(0,61,143,.06);
+  transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow .4s ease;
+  position:relative;
+}
+.ep-card::before{
+  content:'';position:absolute;inset:0;border-radius:28px;
+  background:linear-gradient(135deg,rgba(0,87,184,.04),rgba(0,180,166,.04));
+  opacity:0;transition:opacity .4s ease;pointer-events:none;z-index:0;
+}
+.ep-card:hover{transform:translateY(-12px);box-shadow:0 32px 80px rgba(0,61,143,.18),0 8px 24px rgba(0,61,143,.1);}
+.ep-card:hover::before{opacity:1;}
+
+/* Gradient border glow on hover */
+.ep-card::after{
+  content:'';position:absolute;inset:-2px;border-radius:30px;
+  background:linear-gradient(135deg,#0057B8,#00B4A6,#0057B8);
+  z-index:-1;opacity:0;transition:opacity .4s ease;
+}
+.ep-card:hover::after{opacity:1;}
+
+/* Top accent stripe */
+.ep-accent{height:5px;background:linear-gradient(90deg,#0057B8,#00B4A6);border-radius:0;position:relative;z-index:1;}
+.ep-card-teal .ep-accent{background:linear-gradient(90deg,#00B4A6,#00C3EE);}
+
+/* Photo area */
+.ep-photo-wrap{
+  position:relative;height:320px;overflow:hidden;
+  background:linear-gradient(135deg,#e8f0ff,#e0f7f5);
+}
+.ep-photo{
+  width:100%;height:100%;object-fit:cover;object-position:center top;
+  display:block;transition:transform .6s ease;
+}
+.ep-card:hover .ep-photo{transform:scale(1.05);}
+.ep-photo-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,transparent 55%,rgba(0,20,60,.3));
+  pointer-events:none;
+}
+.ep-badge-wrap{
+  position:absolute;bottom:16px;left:16px;display:flex;gap:8px;flex-wrap:wrap;z-index:2;
+}
+.ep-badge{
+  background:rgba(255,255,255,.92);backdrop-filter:blur(8px);
+  color:#0057B8;font-size:.65rem;font-weight:700;
+  padding:5px 12px;border-radius:50px;letter-spacing:.06em;text-transform:uppercase;
+  border:1px solid rgba(0,87,184,.2);
+  box-shadow:0 2px 8px rgba(0,0,0,.12);
+}
+.ep-card-teal .ep-badge{color:#008F84;border-color:rgba(0,180,166,.25);}
+
+/* Card body */
+.ep-body{padding:28px 30px 32px;position:relative;z-index:1;}
+.ep-name{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:1.6rem;font-weight:700;color:#0d1b3e;
+  line-height:1.2;margin-bottom:6px;
+}
+.ep-qual{
+  font-size:.78rem;font-weight:600;color:#0057B8;
+  letter-spacing:.04em;margin-bottom:4px;
+}
+.ep-card-teal .ep-qual{color:#008F84;}
+.ep-desig{
+  font-size:.82rem;font-weight:700;color:#374151;
+  text-transform:uppercase;letter-spacing:.08em;
+  margin-bottom:18px;padding-bottom:18px;
+  border-bottom:1px solid rgba(0,87,184,.1);
+}
+.ep-desc{
+  font-size:.88rem;color:#4b5563;line-height:1.75;margin-bottom:22px;
+}
+.ep-specs{display:flex;flex-wrap:wrap;gap:8px;}
+.ep-spec{
+  display:inline-flex;align-items:center;gap:6px;
+  background:linear-gradient(135deg,#f0f6ff,#e8f4ff);
+  color:#0057B8;font-size:.72rem;font-weight:600;
+  padding:6px 14px;border-radius:50px;
+  border:1px solid rgba(0,87,184,.12);
+}
+.ep-card-teal .ep-spec{background:linear-gradient(135deg,#e8faf8,#d5f5f1);color:#008F84;border-color:rgba(0,180,166,.18);}
+.ep-spec i{font-size:.72rem;}
+</style>
+
+<section id="expert-panel" aria-label="Expert Panel – Consultant Pathologist and Lab Director at Bala Diagnostics Karaikal">
+  <div class="wrap">
+    <div class="s-hdr rv">
+      <span class="s-tag"><i class="fas fa-microscope"></i>Expert Panel</span>
+      <h2 class="s-title">Our Distinguished <span>Consultants</span></h2>
+      <p class="s-sub">Supporting accurate diagnosis through pathology, biochemistry, and laboratory excellence at <strong>Bala Diagnostics</strong> — the best diagnostics centre in Karaikal.</p>
+      <div class="s-line"></div>
+    </div>
+
+    <div class="ep-grid">
+
+      <!-- Dr. N. Ananthapriya -->
+      <div class="ep-card ep-card-teal rv" style="transition-delay:.05s">
+        <div class="ep-accent"></div>
+        <div class="ep-photo-wrap">
+          <img
+            src="assets/images/doctors/dr-ananthapriya.jpg"
+            alt="Dr. N. Ananthapriya – Lab Director Bala Diagnostics, Biochemistry Laboratory Karaikal"
+            class="ep-photo"
+            loading="lazy"
+            width="600"
+            height="320"
+          >
+          <div class="ep-photo-overlay"></div>
+          <div class="ep-badge-wrap">
+            <span class="ep-badge"><i class="fas fa-flask"></i> Biochemistry</span>
+            <span class="ep-badge"><i class="fas fa-vials"></i> Lab Director</span>
+          </div>
+        </div>
+        <div class="ep-body">
+          <div class="ep-name" itemprop="name">Dr. N. Ananthapriya</div>
+          <div class="ep-qual">MBBS., M.D (Biochemistry)</div>
+          <div class="ep-desig">Lab Director – Bala Diagnostics</div>
+          <p class="ep-desc">
+            <strong>Dr. N. Ananthapriya</strong> serves as Lab Director at <strong>Bala Diagnostics, Karaikal</strong>, overseeing biochemistry services, laboratory quality standards, and advanced diagnostic testing. Her expertise in <em>Biochemistry Laboratory Karaikal</em> ensures every test meets the highest standards of diagnostic excellence.
+          </p>
+          <div class="ep-specs">
+            <span class="ep-spec"><i class="fas fa-check-circle"></i>Laboratory Medicine</span>
+            <span class="ep-spec"><i class="fas fa-check-circle"></i>Biochemistry</span>
+            <span class="ep-spec"><i class="fas fa-check-circle"></i>Diagnostic Excellence</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dr. C. Sathya Saranya -->
+      <div class="ep-card rv" style="transition-delay:.15s">
+        <div class="ep-accent"></div>
+        <div class="ep-photo-wrap">
+          <img
+            src="assets/images/doctors/dr-sathya-saranya.jpg"
+            alt="Dr. C. Sathya Saranya – Consultant Pathologist in Karaikal, Pathology Services Karaikal"
+            class="ep-photo"
+            loading="lazy"
+            width="600"
+            height="320"
+          >
+          <div class="ep-photo-overlay"></div>
+          <div class="ep-badge-wrap">
+            <span class="ep-badge"><i class="fas fa-microscope"></i> Pathology</span>
+            <span class="ep-badge"><i class="fas fa-notes-medical"></i> Diagnostics</span>
+          </div>
+        </div>
+        <div class="ep-body">
+          <div class="ep-name">Dr. C. Sathya Saranya</div>
+          <div class="ep-qual">MBBS., M.D (Pathology)</div>
+          <div class="ep-desig">Consultant Pathologist</div>
+          <p class="ep-desc">
+            <strong>Dr. C. Sathya Saranya</strong> is a <em>Consultant Pathologist in Karaikal</em> associated with Bala Diagnostics, providing accurate laboratory interpretation, diagnostic pathology expertise, and quality-focused clinical reporting. A key pillar of <em>Pathology Services Karaikal</em>.
+          </p>
+          <div class="ep-specs">
+            <span class="ep-spec"><i class="fas fa-check-circle"></i>Pathology</span>
+            <span class="ep-spec"><i class="fas fa-check-circle"></i>Clinical Reporting</span>
+            <span class="ep-spec"><i class="fas fa-check-circle"></i>Diagnostic Experts Karaikal</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ======= ASSOCIATED SERVICES ======= -->
 <section id="assoc">
   <div class="wrap">
@@ -2303,69 +2484,6 @@ body{visibility:hidden}
       <div style="text-align:center;">
         <div style="color:rgba(255,255,255,.62);font-size:.83rem;margin-bottom:16px;">Every hearing aid is fitted after a proper audiogram — visit us for a <strong style="color:#7DF9FF;">free hearing consultation</strong>.</div>
         <a href="https://wa.me/918925929922?text=I'm%20interested%20in%20a%20Hearing%20Aid%20consultation%20at%20A.M.%20Centre" target="_blank" style="display:inline-flex;align-items:center;gap:9px;background:white;color:#0057B8;padding:14px 32px;border-radius:50px;font-weight:800;font-size:.9rem;text-decoration:none;box-shadow:0 8px 30px rgba(0,0,0,.35);transition:all .3s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 14px 42px rgba(0,0,0,.4)';" onmouseout="this.style.transform='none';this.style.boxShadow='0 8px 30px rgba(0,0,0,.35)';"><i class="fab fa-whatsapp" style="color:#25D366;font-size:1.1rem;"></i>Book Free Hearing Consultation on WhatsApp</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ======= CONTACT ======= -->
-<section id="contact" aria-label="Contact KB Clinic – 372 Bharathiyar Road, Karaikal – 89259 29922">
-  <div class="wrap">
-    <div class="s-hdr rv">
-      <span class="s-tag"><i class="fas fa-map-marker-alt"></i>Find Us</span>
-      <h2 class="s-title">Get In <span>Touch</span></h2>
-      <p class="s-sub">Visit us, call us, or send a message — we're here to help you stay healthy.</p>
-      <div class="s-line"></div>
-    </div>
-    <div class="contact-wrap">
-      <div class="rv-l">
-        <div class="ci-card">
-          <div class="ci-item"><div class="ci-ico"><i class="fas fa-map-marker-alt"></i></div><div class="ci-txt"><h4>Clinic Address</h4><p>372, Bharathiyar Road, Kovilpathu,<br>near Stella Studio, Karaikal – 609 602,<br>Puducherry</p></div></div>
-          <div class="ci-item"><div class="ci-ico"><i class="fas fa-phone-alt"></i></div><div class="ci-txt"><h4>Phone / Mobile</h4><a href="tel:+918925929922">+91 89259 29922</a><br><a href="tel:04368224815">04368 – 224815</a></div></div>
-          <div class="ci-item"><div class="ci-ico"><i class="fab fa-whatsapp"></i></div><div class="ci-txt"><h4>WhatsApp</h4><a href="https://wa.me/918925929922" target="_blank">+91 89259 29922 (Chat Now)</a></div></div>
-          <div class="ci-item"><div class="ci-ico"><i class="fas fa-clock"></i></div><div class="ci-txt"><h4>Clinic Hours</h4><p>Mon – Sat: 9:00 AM – 1:00 PM &amp; 5:00 PM – 8:30 PM<br>Sunday: By Prior Appointment Only</p></div></div>
-        </div>
-        <div class="map-wrap">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3921.4!2d79.8317!3d10.9206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a551132ec46fd23%3A0xcedc11a69c57152b!2sK.B+Clinic%2C+372%2C+Bharathiyar+Road%2C+Kovilpathu%2C+near+Stella+Studio%2C+Karaikal%2C+Puducherry+609602!5e0!3m2!1sen!2sin!4v1716000000000!5m2!1sen!2sin" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-      <div class="cf-wrap rv-r">
-        <div class="cf-title">Book an Appointment</div>
-        <div class="cf-sub">Fill in the form and our team will confirm your appointment promptly.</div>
-        <div id="cfArea">
-          <div class="fg-row">
-            <div class="fg"><label>Full Name *</label><input type="text" id="cf-n" placeholder="Your name"></div>
-            <div class="fg"><label>Mobile *</label><input type="tel" id="cf-p" placeholder="+91 XXXXX"></div>
-          </div>
-          <div class="fg"><label>Select Doctor</label>
-            <select id="cf-d">
-              <option value="">Choose a Doctor</option>
-              <option>Prof. Dr. A. Ganesh Bala – ENT &amp; Head-Neck</option>
-              <option>Dr. A. Ramesh Bala – General Medicine &amp; Diabetology</option>
-            </select>
-          </div>
-          <div class="fg"><label>Service Required</label>
-            <select id="cf-s">
-              <option value="">Select a Service</option>
-              <option>Ear, Nose, Throat Diseases</option>
-              <option>Head and Neck Diseases</option>
-              <option>Heart Diseases</option>
-              <option>Kidney &amp; Liver Diseases</option>
-              <option>Vertigo &amp; Neurological</option>
-              <option>Diabetes &amp; Foot Diseases</option>
-              <option>Hypertension, Cholesterol &amp; Thyroid</option>
-              <option>Allergy, Asthma &amp; Ulcer</option>
-            </select>
-          </div>
-          <div class="fg"><label>Preferred Date</label><input type="date" id="cf-dt"></div>
-          <div class="fg"><label>Message (Optional)</label><textarea id="cf-m" placeholder="Describe your symptoms..."></textarea></div>
-          <button class="btn btn-full" onclick="submitCF()"><i class="fas fa-paper-plane"></i>Send Appointment Request</button>
-        </div>
-        <div id="cfOk" style="display:none;text-align:center;padding:36px 0">
-          <i class="fas fa-check-circle" style="font-size:3rem;color:var(--teal);display:block;margin-bottom:12px;animation:popIn .5s both"></i>
-          <h3 style="font-family:'Cormorant Garamond',serif;color:var(--cobalt-d);margin-bottom:8px">Appointment Requested!</h3>
-          <p style="color:var(--sub);font-size:.86rem">We'll contact you shortly to confirm your appointment at KB Clinic.</p>
-        </div>
       </div>
     </div>
   </div>
