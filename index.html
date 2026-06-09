@@ -70,9 +70,9 @@ body{visibility:hidden}
 <link rel="preload" href="assets/images/banners/hero-clinic-main.webp" as="image" fetchpriority="high">
 <link rel="preload" href="assets/images/doctors/doctor-ganesh-bala.webp" as="image">
 <link rel="preload" href="assets/images/doctors/doctor-ramesh-bala.webp" as="image">
-<link rel="preload" href="assets/css/kb-clinic.min.css" as="style">
+<link rel="preload" href="assets/css/kb-clinic.min.css?v=20260615" as="style">
 <!-- Critical stylesheets (blocking — loader masks render while these parse) -->
-<link rel="stylesheet" href="assets/css/kb-clinic.min.css">
+<link rel="stylesheet" href="assets/css/kb-clinic.min.css?v=20260615">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -374,13 +374,12 @@ body{visibility:hidden}
   <!-- MODE SWITCHER PILL -->
   <div class="mode-pill" id="modePill">
     <div class="mode-pill-indicator" id="modeIndicator"></div>
-    <button class="mode-pill-btn active" id="mpAll" onclick="switchMode('all')">
-      <i class="fas fa-th-large"></i>ALL
-    </button>
     <button class="mode-pill-btn" id="mpEnt" onclick="switchMode('ent')">
       <i class="fas fa-ear-deaf"></i>ENT
     </button>
-
+    <button class="mode-pill-btn active" id="mpAll" onclick="switchMode('all')">
+      <i class="fas fa-th-large"></i>ALL
+    </button>
     <button class="mode-pill-btn" id="mpInt" onclick="switchMode('internal')">
       <i class="fas fa-heartbeat"></i>MD
     </button>
@@ -393,8 +392,8 @@ body{visibility:hidden}
 <div class="mode-badge" id="modeBadge"></div>
 <div class="mob-nav" id="mobNav">
   <div class="mob-mode-row">
-    <button class="mob-mode-btn active" id="mmpAll" onclick="switchMode('all');closeMob()"><i class="fas fa-th-large"></i>All Depts</button>
     <button class="mob-mode-btn" id="mmpEnt" onclick="switchMode('ent');closeMob()"><i class="fas fa-ear-deaf"></i>ENT</button>
+    <button class="mob-mode-btn active" id="mmpAll" onclick="switchMode('all');closeMob()"><i class="fas fa-th-large"></i>All Depts</button>
     <button class="mob-mode-btn" id="mmpInt" onclick="switchMode('internal');closeMob()"><i class="fas fa-heartbeat"></i>MD</button>
   </div>
   <a href="#home" onclick="closeMob()">Home</a>
@@ -511,22 +510,6 @@ body{visibility:hidden}
       <h2 class="s-title">Expert Care for <span>Every Need</span></h2>
       <p class="s-sub">KB Clinic, Karaikal offers world-class ENT, General Medicine, and Internal Medicine care. Select a speciality to explore doctor profiles, conditions treated, services, and personalised health tips.</p>
       <div class="s-line"></div>
-    </div>
-
-    <!-- Segmented Tab Bar -->
-    <div class="sp-bar-outer rv">
-      <div class="sp-bar" id="spBar">
-        <div class="sp-slider" id="spSlider"></div>
-        <button class="sp-tab active" data-tab="0" onclick="switchSp(0)">
-          <i class="fas fa-ear-deaf"></i>ENT Specialist
-        </button>
-        <button class="sp-tab" data-tab="1" onclick="switchSp(1)">
-          <i class="fas fa-user-md"></i>MD Consultant
-        </button>
-        <button class="sp-tab" data-tab="2" onclick="switchSp(2)">
-          <i class="fas fa-stethoscope"></i>Internal Medicine (MD)
-        </button>
-      </div>
     </div>
 
     <!-- ——— PANELS ——— -->
@@ -1386,10 +1369,6 @@ body{visibility:hidden}
     </div>
   </div>
   <div style="max-width:1240px;margin:0 auto;padding:0 5%">
-    <div class="svc-mode-header" id="svcModeHeader">
-      <h3 id="svcModeTitle">Showing: <span id="svcModeName">All Services</span></h3>
-      <p style="color:var(--sub);font-size:.85rem;margin-top:6px" id="svcModeSub"></p>
-    </div>
     <div class="svc-grid" id="svcGrid"></div>
   </div>
 </section>
@@ -2624,7 +2603,7 @@ body{visibility:hidden}
     <button class="mmf-btn" onclick="switchMode('internal')" style="background:linear-gradient(135deg,#1a0080,#3730a3)"><i class="fas fa-heartbeat"></i>MD</button>
   </div>
 </div>
-<script src="assets/js/kb-clinic.min.js" defer></script>
+<script src="assets/js/kb-clinic.min.js?v=20260615" defer></script>
 <script>
 /* KB Clinic Page Loader Dismiss */
 (function(){
@@ -2651,4 +2630,4 @@ body{visibility:hidden}
 })();
 </script>
 </body>
-</html> 
+</html>
