@@ -70,9 +70,9 @@ body{visibility:hidden}
 <link rel="preload" href="assets/images/banners/hero-clinic-main.webp" as="image" fetchpriority="high">
 <link rel="preload" href="assets/images/doctors/doctor-ganesh-bala.webp" as="image">
 <link rel="preload" href="assets/images/doctors/doctor-ramesh-bala.webp" as="image">
-<link rel="preload" href="assets/css/kb-clinic.min.css?v=20260617" as="style">
+<link rel="preload" href="assets/css/kb-clinic.min.css?v=20260631" as="style">
 <!-- Critical stylesheets (blocking — loader masks render while these parse) -->
-<link rel="stylesheet" href="assets/css/kb-clinic.min.css?v=20260617">
+<link rel="stylesheet" href="assets/css/kb-clinic.min.css?v=20260631">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -365,7 +365,7 @@ body{visibility:hidden}
     </div>
   </a>
   <div class="nav-links" role="list">
-    <a href="#speciality" aria-label="ENT Specialist, MD Consultant and Internal Medicine Specialities">Specialities</a>
+    <a href="#services" aria-label="ENT, General Physician and Internal Medicine Services">Services</a>
     <a href="#doctors" aria-label="Meet our ENT Specialist and Diabetologist in Karaikal">Doctors</a>
     <a href="#services" aria-label="ENT, Diabetes, Hearing Aid and General Medicine Services">Services</a>
     <a href="#contact" aria-label="Contact KB Clinic Karaikal – Book an Appointment">Contact</a>
@@ -397,7 +397,7 @@ body{visibility:hidden}
     <button class="mob-mode-btn" id="mmpInt" onclick="switchMode('internal');closeMob()"><i class="fas fa-heartbeat"></i>MD</button>
   </div>
   <a href="#home" onclick="closeMob()">Home</a>
-  <a href="#speciality" onclick="closeMob()">Specialities</a>
+  <a href="#services" onclick="closeMob()">Services</a>
   <a href="#doctors" onclick="closeMob()">Our Doctors</a>
   <a href="#services" onclick="closeMob()">Services</a>
   <a href="#why-choose" onclick="closeMob()">Why KB Clinic</a>
@@ -496,630 +496,6 @@ body{visibility:hidden}
     </div>
   </div>
 </div>
-
-<!-- ======= SPECIALITY SWITCHER ======= -->
-<section id="speciality" aria-label="Speciality Switcher — KB Clinic Karaikal">
-  <!-- floating medical elements -->
-  <i class="fas fa-stethoscope med-float" style="top:8%;left:3%;animation-delay:0s;"></i>
-  <i class="fas fa-heartbeat med-float" style="top:12%;right:4%;animation-delay:2s;"></i>
-  <i class="fas fa-ear-deaf med-float" style="bottom:10%;left:6%;animation-delay:4s;"></i>
-
-  <div class="sp-wrap">
-    <div class="s-hdr rv">
-      <span class="s-tag"><i class="fas fa-th-large"></i>Our Specialities</span>
-      <h2 class="s-title">Expert Care for <span>Every Need</span></h2>
-      <p class="s-sub">KB Clinic, Karaikal offers world-class ENT, General Medicine, and Internal Medicine care. Select a speciality to explore doctor profiles, conditions treated, services, and personalised health tips.</p>
-      <div class="s-line"></div>
-    </div>
-
-    <!-- ——— PANELS ——— -->
-    <!-- DYNAMIC HEALTH TIP STRIP -->
-    <div id="modeHealthTip" class="mode-tip-strip rv">
-      <div class="mode-tip-icon"><i id="modeTipIcon" class="fas fa-lightbulb"></i></div>
-      <div class="mode-tip-content">
-        <div class="mode-tip-label" id="modeTipLabel">KB Clinic Health Tip</div>
-        <div class="mode-tip-text" id="modeTipText">Visit our specialists annually — early detection saves lives and significantly reduces treatment costs.</div>
-      </div>
-      <div class="mode-tip-nav">
-        <button class="mode-tip-btn" onclick="cycleTip(-1)" aria-label="Previous tip"><i class="fas fa-chevron-left"></i></button>
-        <button class="mode-tip-btn" onclick="cycleTip(1)"  aria-label="Next tip"><i class="fas fa-chevron-right"></i></button>
-      </div>
-    </div>
-
-    <div class="sp-panels" id="spPanels">
-
-      <!-- PANEL 0: ENT -->
-      <div class="sp-panel active" id="sp-panel-0">
-        <div class="sp-panel-grid">
-          <!-- Doctor Card -->
-          <div class="sp-doc-card rv-l">
-            <div class="sp-doc-img">
-              <img src="assets/images/doctors/doctor-ganesh-bala.webp" alt="Prof. Dr. A. Ganesh Bala – Best ENT Specialist in Karaikal, M.S. ENT Surgeon" width="320" height="380" loading="lazy" style="object-fit:contain;object-position:center top;background:#f0f6ff;">
-              <div class="sp-doc-img-ov"></div>
-              <span class="sp-doc-badge"><i class="fas fa-award" style="margin-right:4px"></i>ENT Specialist</span>
-            </div>
-            <div class="sp-doc-body">
-              <div class="sp-doc-name">Prof. Dr. A. Ganesh Bala</div>
-              <div class="sp-doc-qual">M.S (ENT)., MBA (HCHM).</div>
-              <div class="sp-doc-info-strip">
-                <div class="sp-doc-info-cell"><span class="sp-doc-info-val">20+</span><span class="sp-doc-info-lbl">Years Exp.</span></div>
-                <div class="sp-doc-info-cell"><span class="sp-doc-info-val">84617</span><span class="sp-doc-info-lbl">Reg. No.</span></div>
-                <div class="sp-doc-info-cell"><span class="sp-doc-info-val">Karaikal</span><span class="sp-doc-info-lbl">Location</span></div>
-              </div>
-              <div class="sp-doc-spec">Consultant – Ear, Nose, Throat, Head &amp; Neck Diseases · KB Clinic, Karaikal</div>
-              <div class="sp-doc-meta">
-                <div class="sp-doc-meta-row"><i class="fas fa-graduation-cap"></i>20+ Years of ENT Expertise</div>
-                <div class="sp-doc-meta-row"><i class="fas fa-microscope"></i>OTO Endoscopy &amp; Video Laryngoscopy</div>
-                <div class="sp-doc-meta-row"><i class="fas fa-id-card"></i>Reg. No. 84617 | ISO 9001:2015</div>
-                <div class="sp-doc-meta-row"><i class="fas fa-map-marker-alt"></i>372, Bharathiyar Road, Karaikal</div>
-              </div>
-              <button class="sp-doc-cta" onclick="openBk()"><i class="fas fa-calendar-check"></i>Book Appointment</button>
-            </div>
-          </div>
-
-          <!-- Right Content -->
-          <div class="sp-content">
-
-            <!-- Conditions Treated -->
-            <div class="sp-box rv">
-              <div class="sp-section-title"><i class="fas fa-notes-medical"></i>Conditions Treated — ENT Specialist in Karaikal</div>
-              <div class="sp-conditions sp-stagger">
-                <div class="sp-cond-item" onclick="openCond('ent',0)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&q=80" alt="Sinusitis">
-                  <div class="sp-cond-overlay"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-head-side-cough"></i></div>
-                    <div class="sp-cond-name">Sinusitis &amp; Nasal Congestion</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('ent',1)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&q=80" alt="Ear Infection">
-                  <div class="sp-cond-overlay"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-ear-deaf"></i></div>
-                    <div class="sp-cond-name">Ear Infections &amp; Pain</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('ent',2)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1624969862644-791f3dc98927?w=400&q=80" alt="Hearing Loss">
-                  <div class="sp-cond-overlay"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-volume-mute"></i></div>
-                    <div class="sp-cond-name">Hearing Loss Problems</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('ent',3)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=400&q=80" alt="Tonsillitis">
-                  <div class="sp-cond-overlay"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-lungs"></i></div>
-                    <div class="sp-cond-name">Tonsillitis &amp; Adenoids</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('ent',4)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&q=80" alt="Vertigo">
-                  <div class="sp-cond-overlay"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-dizzy"></i></div>
-                    <div class="sp-cond-name">Vertigo &amp; Balance Disorders</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('ent',5)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1585421514738-01798e348b17?w=400&q=80" alt="Allergy Rhinitis">
-                  <div class="sp-cond-overlay"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-allergies"></i></div>
-                    <div class="sp-cond-name">Allergy &amp; Allergic Rhinitis</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('ent',6)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&q=80" alt="Head Neck Tumour">
-                  <div class="sp-cond-overlay"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-head-side-mask"></i></div>
-                    <div class="sp-cond-name">Head &amp; Neck Tumours</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('ent',7)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80" alt="Tinnitus">
-                  <div class="sp-cond-overlay"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-wave-square"></i></div>
-                    <div class="sp-cond-name">Tinnitus (Ear Ringing)</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('ent',8)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&q=80" alt="Nasal Polyps">
-                  <div class="sp-cond-overlay"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-fish"></i></div>
-                    <div class="sp-cond-name">Nasal Polyps &amp; Deviated Septum</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Services -->
-            <div class="sp-box rv">
-              <div class="sp-section-title"><i class="fas fa-tools"></i>Services Offered</div>
-              <div class="sp-services sp-stagger">
-                <div class="sp-svc-card">
-                  <div class="sp-svc-icon"><i class="fas fa-search"></i></div>
-                  <div class="sp-svc-txt"><h4>OTO Endoscopy</h4><p>High-definition ear canal and middle ear visualisation for precise diagnosis.</p></div>
-                </div>
-                <div class="sp-svc-card">
-                  <div class="sp-svc-icon"><i class="fas fa-video"></i></div>
-                  <div class="sp-svc-txt"><h4>Video Laryngoscopy</h4><p>Live vocal cord and throat examination displayed on screen for patient education.</p></div>
-                </div>
-                <div class="sp-svc-card">
-                  <div class="sp-svc-icon"><i class="fas fa-wave-square"></i></div>
-                  <div class="sp-svc-txt"><h4>Audiometry Testing</h4><p>Pure-tone hearing assessment with detailed audiogram report on-site.</p></div>
-                </div>
-                <div class="sp-svc-card">
-                  <div class="sp-svc-icon"><i class="fas fa-redo"></i></div>
-                  <div class="sp-svc-txt"><h4>Vertigo Rehabilitation</h4><p>Epley &amp; Semont maneuvers — 80%+ patients see relief in a single session.</p></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Health Tips -->
-            <div class="sp-box rv">
-              <div class="sp-section-title"><i class="fas fa-lightbulb"></i>ENT Health Tips from Dr. Ganesh Bala</div>
-              <div class="sp-tips sp-stagger">
-                <div class="sp-tip"><div class="sp-tip-num">1</div><p><strong>Avoid cotton buds</strong> inside the ear — they push wax deeper and damage the ear canal. Let your ears self-clean.</p></div>
-                <div class="sp-tip"><div class="sp-tip-num">2</div><p><strong>Steam inhalation</strong> twice daily during cold season relieves sinus congestion and prevents sinusitis flare-ups.</p></div>
-                <div class="sp-tip"><div class="sp-tip-num">3</div><p><strong>Protect your hearing</strong> — limit earphone use to 60 minutes at 60% volume. Noise-induced hearing loss is permanent.</p></div>
-                <div class="sp-tip"><div class="sp-tip-num">4</div><p><strong>Stay hydrated</strong> — drinking 2–3 litres of water daily keeps nasal and throat mucosa healthy and reduces infections.</p></div>
-                <div class="sp-tip"><div class="sp-tip-num">5</div><p><strong>Treat allergies early</strong> — untreated allergic rhinitis progresses to sinusitis and polyps. Consult before it worsens.</p></div>
-                <div class="sp-tip"><div class="sp-tip-num">6</div><p><strong>For vertigo episodes</strong>, sit or lie down immediately, avoid head jerks, and seek specialist evaluation — early treatment prevents recurrence.</p></div>
-              </div>
-            </div>
-
-            <!-- When to Consult -->
-            <div class="sp-box rv">
-              <div class="sp-section-title"><i class="fas fa-clock"></i>When Should You Consult an ENT Specialist?</div>
-              <div class="sp-timeline sp-stagger">
-                <div class="sp-tl-item"><div class="sp-tl-dot"><i class="fas fa-exclamation"></i></div><div class="sp-tl-txt"><h4>Ear pain or discharge lasting more than 3 days</h4><p>May indicate infection, perforated eardrum, or foreign body — needs expert evaluation.</p></div></div>
-                <div class="sp-tl-item"><div class="sp-tl-dot"><i class="fas fa-volume-mute"></i></div><div class="sp-tl-txt"><h4>Sudden or gradual hearing loss</h4><p>Sudden hearing loss is a medical emergency. Gradual loss may be treatable if caught early.</p></div></div>
-                <div class="sp-tl-item"><div class="sp-tl-dot"><i class="fas fa-dizzy"></i></div><div class="sp-tl-txt"><h4>Recurrent episodes of dizziness or vertigo</h4><p>BPPV, Meniere's disease, and vestibular neuritis are highly treatable with the right specialist.</p></div></div>
-                <div class="sp-tl-item"><div class="sp-tl-dot"><i class="fas fa-head-side-cough"></i></div><div class="sp-tl-txt"><h4>Chronic blocked nose or snoring</h4><p>May indicate deviated septum, polyps, or adenoid enlargement — impacting sleep quality.</p></div></div>
-                <div class="sp-tl-item"><div class="sp-tl-dot"><i class="fas fa-search-plus"></i></div><div class="sp-tl-txt"><h4>Neck lump or swelling</h4><p>Any neck mass must be evaluated promptly to rule out lymph node or thyroid pathology.</p></div></div>
-              </div>
-            </div>
-
-            <!-- Dos & Don'ts: ENT -->
-            <div class="sp-box rv">
-              <div class="sp-section-title"><i class="fas fa-clipboard-check"></i>ENT Care — Dos &amp; Don'ts</div>
-              <div class="sp-dnd-wrap">
-                <div class="sp-dnd-col sp-dnd-do">
-                  <div class="sp-dnd-header"><i class="fas fa-check-circle"></i>Do's — Protect Your ENT Health</div>
-                  <div class="sp-dnd-item"><i class="fas fa-check"></i>Clean outer ears gently with a soft cloth — never insert anything into the canal</div>
-                  <div class="sp-dnd-item"><i class="fas fa-check"></i>Use steam inhalation during cold seasons to naturally clear nasal passages</div>
-                  <div class="sp-dnd-item"><i class="fas fa-check"></i>Follow the 60/60 rule: earphones at 60% volume, max 60 minutes at a stretch</div>
-                  <div class="sp-dnd-item"><i class="fas fa-check"></i>Get annual hearing test if over 50 or regularly exposed to loud environments</div>
-                  <div class="sp-dnd-item"><i class="fas fa-check"></i>Stay hydrated — 2–3 litres of water daily keeps nasal mucosa healthy</div>
-                  <div class="sp-dnd-item"><i class="fas fa-check"></i>Consult early for recurrent allergies before they develop into sinusitis or polyps</div>
-                </div>
-                <div class="sp-dnd-col sp-dnd-dont">
-                  <div class="sp-dnd-header"><i class="fas fa-times-circle"></i>Don'ts — Common Mistakes to Avoid</div>
-                  <div class="sp-dnd-item"><i class="fas fa-times"></i>Never insert cotton buds, pins, or sharp objects into the ear canal</div>
-                  <div class="sp-dnd-item"><i class="fas fa-times"></i>Don't self-medicate for ear pain or discharge lasting more than 2 days</div>
-                  <div class="sp-dnd-item"><i class="fas fa-times"></i>Avoid prolonged loud noise — crackers, machinery, concerts without ear protection</div>
-                  <div class="sp-dnd-item"><i class="fas fa-times"></i>Don't ignore recurring vertigo or balance episodes — seek specialist evaluation</div>
-                  <div class="sp-dnd-item"><i class="fas fa-times"></i>Avoid nasal decongestant sprays for more than 5 consecutive days (rebound effect)</div>
-                  <div class="sp-dnd-item"><i class="fas fa-times"></i>Don't delay neck lumps — any new neck swelling needs evaluation within 2 weeks</div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      <!-- HEARING AID CENTRE STRIP — compact summary (full details in #hearing-aid section below) -->
-      <div style="background:linear-gradient(135deg,#003D8F,#0057B8,#00B4A6);border-radius:20px;padding:20px 22px;margin:24px 0 0;color:white;" class="rv">
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
-          <div style="width:48px;height:48px;background:rgba(255,255,255,.15);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;"><i class="fas fa-assistive-listening-systems"></i></div>
-          <div>
-            <div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;letter-spacing:.02em;">A.M. Hearing Aid Centre</div>
-            <div style="font-size:.75rem;opacity:.72;margin-top:2px;">Digital hearing aids · CIC · ITC · BTE · Pocket — Siemens, Phonak & more</div>
-          </div>
-        </div>
-        <div style="font-size:.78rem;opacity:.82;line-height:1.6;margin-bottom:14px;">Expert audiogram-guided fitting with lifetime service. Co-located at KB Clinic under Dr. A. Ganesh Bala, M.S. (ENT).</div>
-        <a href="#hearing-aid" style="display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.28);color:white;padding:8px 18px;border-radius:50px;font-size:.78rem;font-weight:700;text-decoration:none;" onclick="document.getElementById('hearing-aid').scrollIntoView({behavior:'smooth'});return false;"><i class="fas fa-arrow-down"></i>View Full Hearing Aid Details</a>
-      </div>
-      </div><!-- /panel-0 -->
-
-      <!-- PANEL 1: General Physician -->
-      <div class="sp-panel" id="sp-panel-1">
-        <div class="sp-panel-grid">
-          <div class="sp-doc-card rv-l">
-            <div class="sp-doc-img">
-              <img src="assets/images/doctors/doctor-ramesh-bala.webp" alt="Dr. A. Ramesh Bala – Best General Physician and Diabetologist in Karaikal, MD, F.Diab UK" width="320" height="380" loading="lazy" style="object-fit:contain;object-position:center top;background:#f0f6ff;">
-              <div class="sp-doc-img-ov"></div>
-              <span class="sp-doc-badge"><i class="fas fa-award" style="margin-right:4px"></i>MD Consultant</span>
-            </div>
-            <div class="sp-doc-body">
-              <div class="sp-doc-name">Dr. A. Ramesh Bala</div>
-              <div class="sp-doc-qual">M.D (Gen. Medicine)., F.Diab (UK)., FNE., PGDG.</div>
-              <div class="sp-doc-info-strip">
-                <div class="sp-doc-info-cell"><span class="sp-doc-info-val">12+</span><span class="sp-doc-info-lbl">Years Exp.</span></div>
-                <div class="sp-doc-info-cell"><span class="sp-doc-info-val">100034</span><span class="sp-doc-info-lbl">Reg. No.</span></div>
-                <div class="sp-doc-info-cell"><span class="sp-doc-info-val">Karaikal</span><span class="sp-doc-info-lbl">Location</span></div>
-              </div>
-              <div class="sp-doc-spec">MD Consultant &amp; Diabetologist · Asst. Professor, VMMC &amp; H, Karaikal</div>
-              <div class="sp-doc-meta">
-                <div class="sp-doc-meta-row"><i class="fas fa-graduation-cap"></i>Fellowship in Diabetes — United Kingdom</div>
-                <div class="sp-doc-meta-row"><i class="fas fa-heartbeat"></i>ECG, Diabetes &amp; Chronic Disease Management</div>
-                <div class="sp-doc-meta-row"><i class="fas fa-id-card"></i>Reg. No. 100034 | ISO 9001:2015</div>
-                <div class="sp-doc-meta-row"><i class="fas fa-map-marker-alt"></i>372, Bharathiyar Road, Karaikal</div>
-              </div>
-              <button class="sp-doc-cta" onclick="openBk()"><i class="fas fa-calendar-check"></i>Book Appointment</button>
-            </div>
-          </div>
-
-          <div class="sp-content">
-            <div class="sp-box rv">
-              <div class="sp-section-title"><i class="fas fa-notes-medical"></i>Conditions Treated — MD Consultant in Karaikal</div>
-              <div class="sp-conditions sp-stagger">
-                <div class="sp-cond-item" onclick="openCond('gp',0)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&q=80" alt="Fever">
-                  <div class="sp-cond-overlay" style="background:linear-gradient(160deg,rgba(0,60,30,.5),rgba(0,120,60,.7))"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-thermometer"></i></div>
-                    <div class="sp-cond-name">Fever &amp; Viral Infections</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('gp',1)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?w=400&q=80" alt="Diabetes">
-                  <div class="sp-cond-overlay" style="background:linear-gradient(160deg,rgba(0,60,30,.5),rgba(0,120,60,.7))"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-syringe"></i></div>
-                    <div class="sp-cond-name">Diabetes Mellitus</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('gp',2)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1628595351029-c2bf17511435?w=400&q=80" alt="Hypertension">
-                  <div class="sp-cond-overlay" style="background:linear-gradient(160deg,rgba(0,60,30,.5),rgba(0,120,60,.7))"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    <div class="sp-cond-name">Blood Pressure (Hypertension)</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('gp',3)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&q=80" alt="Flu Cold">
-                  <div class="sp-cond-overlay" style="background:linear-gradient(160deg,rgba(0,60,30,.5),rgba(0,120,60,.7))"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-virus"></i></div>
-                    <div class="sp-cond-name">Flu, Cold &amp; Chest Infections</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('gp',4)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&q=80" alt="Heart">
-                  <div class="sp-cond-overlay" style="background:linear-gradient(160deg,rgba(0,60,30,.5),rgba(0,120,60,.7))"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-heartbeat"></i></div>
-                    <div class="sp-cond-name">Heart Risk Assessment</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('gp',5)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=400&q=80" alt="Checkup">
-                  <div class="sp-cond-overlay" style="background:linear-gradient(160deg,rgba(0,60,30,.5),rgba(0,120,60,.7))"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-clipboard-check"></i></div>
-                    <div class="sp-cond-name">General Health Checkups</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('gp',6)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&q=80" alt="Headache Migraine">
-                  <div class="sp-cond-overlay" style="background:linear-gradient(160deg,rgba(0,60,30,.5),rgba(0,120,60,.7))"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-head-side-cough"></i></div>
-                    <div class="sp-cond-name">Headache &amp; Migraine</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('gp',7)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&q=80" alt="Asthma">
-                  <div class="sp-cond-overlay" style="background:linear-gradient(160deg,rgba(0,60,30,.5),rgba(0,120,60,.7))"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-lungs"></i></div>
-                    <div class="sp-cond-name">Asthma &amp; Allergy</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('gp',8)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=700&q=85" alt="Gastritis">
-                  <div class="sp-cond-overlay" style="background:linear-gradient(160deg,rgba(0,60,30,.5),rgba(0,120,60,.7))"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-stomach"></i></div>
-                    <div class="sp-cond-name">Gastritis &amp; Peptic Ulcer</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="sp-box rv">
-              <div class="sp-section-title"><i class="fas fa-tools"></i>Services Offered</div>
-              <div class="sp-services sp-stagger">
-                <div class="sp-svc-card">
-                  <div class="sp-svc-icon"><i class="fas fa-heartbeat"></i></div>
-                  <div class="sp-svc-txt"><h4>12-Lead ECG</h4><p>On-site ECG interpreted immediately by Dr. Ramesh Bala — same-day cardiac assessment.</p></div>
-                </div>
-                <div class="sp-svc-card">
-                  <div class="sp-svc-icon"><i class="fas fa-syringe"></i></div>
-                  <div class="sp-svc-txt"><h4>Diabetes Management</h4><p>HbA1c-targeted treatment, insulin titration and F.Diab (UK) certified diabetic foot screening.</p></div>
-                </div>
-                <div class="sp-svc-card">
-                  <div class="sp-svc-icon"><i class="fas fa-tachometer-alt"></i></div>
-                  <div class="sp-svc-txt"><h4>BP &amp; Cholesterol Control</h4><p>Evidence-based hypertension management following latest JNC and AHA guidelines.</p></div>
-                </div>
-                <div class="sp-svc-card">
-                  <div class="sp-svc-icon"><i class="fas fa-flask"></i></div>
-                  <div class="sp-svc-txt"><h4>Same-Day Lab Results</h4><p>Bala Diagnostics on-site — CBC, RFT, LFT, lipid panel, and more with rapid turnaround.</p></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="sp-box rv">
-              <div class="sp-section-title"><i class="fas fa-lightbulb"></i>MD Health Tips from Dr. Ramesh Bala</div>
-              <div class="sp-tips sp-stagger">
-                <div class="sp-tip"><div class="sp-tip-num">1</div><p><strong>Check your blood pressure regularly</strong> — hypertension has no symptoms until it causes a stroke or heart attack. Know your numbers.</p></div>
-                <div class="sp-tip"><div class="sp-tip-num">2</div><p><strong>Never skip diabetes medicines</strong> — even when you feel well. Uncontrolled sugars silently damage kidneys, eyes, and nerves over years.</p></div>
-                <div class="sp-tip"><div class="sp-tip-num">3</div><p><strong>Annual health checkup after 30</strong> — CBC, fasting sugar, lipid profile, and kidney function can catch silent diseases years before symptoms appear.</p></div>
-                <div class="sp-tip"><div class="sp-tip-num">4</div><p><strong>Fever beyond 3 days needs investigation</strong> — self-medicating fever can mask serious infections like dengue, typhoid, or UTI.</p></div>
-                <div class="sp-tip"><div class="sp-tip-num">5</div><p><strong>Walk 30 minutes daily</strong> — regular moderate exercise reduces the risk of diabetes, hypertension, and heart disease by up to 35%.</p></div>
-                <div class="sp-tip"><div class="sp-tip-num">6</div><p><strong>Limit salt and sugar</strong> — aim for less than 5g of salt daily. Excess sodium is the leading cause of treatment-resistant hypertension.</p></div>
-              </div>
-            </div>
-
-            <div class="sp-box rv">
-              <div class="sp-section-title"><i class="fas fa-clock"></i>When Should You See an MD Consultant?</div>
-              <div class="sp-timeline sp-stagger">
-                <div class="sp-tl-item"><div class="sp-tl-dot"><i class="fas fa-thermometer-half"></i></div><div class="sp-tl-txt"><h4>Fever persisting beyond 3 days</h4><p>Requires blood investigations to rule out dengue, malaria, typhoid, and bacterial infections.</p></div></div>
-                <div class="sp-tl-item"><div class="sp-tl-dot"><i class="fas fa-tachometer-alt"></i></div><div class="sp-tl-txt"><h4>Newly diagnosed or uncontrolled BP / Sugar</h4><p>Early intensive management prevents organ damage and reduces hospitalisation risk by 60%.</p></div></div>
-                <div class="sp-tl-item"><div class="sp-tl-dot"><i class="fas fa-heartbeat"></i></div><div class="sp-tl-txt"><h4>Chest discomfort or palpitations</h4><p>An on-site 12-lead ECG can quickly identify if cardiac evaluation is urgently required.</p></div></div>
-                <div class="sp-tl-item"><div class="sp-tl-dot"><i class="fas fa-weight"></i></div><div class="sp-tl-txt"><h4>Unexplained weight change</h4><p>Sudden weight gain or loss is often the first sign of thyroid disorders, diabetes, or other systemic disease.</p></div></div>
-                <div class="sp-tl-item"><div class="sp-tl-dot"><i class="fas fa-calendar-check"></i></div><div class="sp-tl-txt"><h4>Annual preventive health checkup</h4><p>Adults over 30 benefit enormously from routine screening — catching disease early saves lives and cost.</p></div></div>
-              </div>
-            </div>
-
-            <!-- Dos & Don'ts: General Physician -->
-            <div class="sp-box rv">
-              <div class="sp-section-title"><i class="fas fa-clipboard-check"></i>MD Health — Dos &amp; Don'ts</div>
-              <div class="sp-dnd-wrap">
-                <div class="sp-dnd-col sp-dnd-do">
-                  <div class="sp-dnd-header"><i class="fas fa-check-circle"></i>Do's — Build Healthy Habits</div>
-                  <div class="sp-dnd-item"><i class="fas fa-check"></i>Drink 8–10 glasses of water daily — hydration regulates blood pressure and prevents UTIs</div>
-                  <div class="sp-dnd-item"><i class="fas fa-check"></i>Sleep 7–8 hours nightly — quality sleep reduces risk of diabetes and hypertension</div>
-                  <div class="sp-dnd-item"><i class="fas fa-check"></i>Walk 30 minutes daily — consistent moderate exercise reduces metabolic disease risk by 35%</div>
-                  <div class="sp-dnd-item"><i class="fas fa-check"></i>Get annual blood checkup after 30 — sugar, lipids, kidney, and thyroid at minimum</div>
-                  <div class="sp-dnd-item"><i class="fas fa-check"></i>Know your blood pressure — measure it monthly; keep below 120/80 mmHg</div>
-                  <div class="sp-dnd-item"><i class="fas fa-check"></i>Eat more vegetables, whole grains, and fruits — reduce processed food and refined sugar</div>
-                </div>
-                <div class="sp-dnd-col sp-dnd-dont">
-                  <div class="sp-dnd-header"><i class="fas fa-times-circle"></i>Don'ts — Common Health Mistakes</div>
-                  <div class="sp-dnd-item"><i class="fas fa-times"></i>Never self-diagnose or self-medicate for fever beyond 3 days — it may mask serious infection</div>
-                  <div class="sp-dnd-item"><i class="fas fa-times"></i>Don't skip diabetes or BP medicines even when you feel well — silent damage continues</div>
-                  <div class="sp-dnd-item"><i class="fas fa-times"></i>Avoid excessive salt — more than 5g daily significantly raises blood pressure</div>
-                  <div class="sp-dnd-item"><i class="fas fa-times"></i>Don't ignore persistent fatigue, weight changes, or unexplained symptoms beyond 2 weeks</div>
-                  <div class="sp-dnd-item"><i class="fas fa-times"></i>Avoid smoking and tobacco — doubles the risk of heart attack and several cancers</div>
-                  <div class="sp-dnd-item"><i class="fas fa-times"></i>Don't delay routine checkups — annual screening detects disease before it becomes serious</div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div><!-- /panel-1 -->
-
-      <!-- PANEL 2: Internal Medicine / MD -->
-      <div class="sp-panel" id="sp-panel-2">
-        <div class="sp-panel-grid">
-          <div class="sp-doc-card rv-l">
-            <div class="sp-doc-img">
-              <img src="assets/images/doctors/doctor-ramesh-bala-internal.webp" alt="Dr. A. Ramesh Bala – Internal Medicine Doctor in Karaikal, MD General Medicine" width="320" height="380" loading="lazy" style="object-fit:contain;object-position:center top;background:#f0f6ff;">
-              <div class="sp-doc-img-ov"></div>
-              <span class="sp-doc-badge"><i class="fas fa-award" style="margin-right:4px"></i>Internal Medicine (MD)</span>
-            </div>
-            <div class="sp-doc-body">
-              <div class="sp-doc-name">Dr. A. Ramesh Bala</div>
-              <div class="sp-doc-qual">M.D (Gen. Medicine)., F.Diab (UK)., FNE., PGDG.</div>
-              <div class="sp-doc-info-strip">
-                <div class="sp-doc-info-cell"><span class="sp-doc-info-val">12+</span><span class="sp-doc-info-lbl">Years Exp.</span></div>
-                <div class="sp-doc-info-cell"><span class="sp-doc-info-val">100034</span><span class="sp-doc-info-lbl">Reg. No.</span></div>
-                <div class="sp-doc-info-cell"><span class="sp-doc-info-val">Karaikal</span><span class="sp-doc-info-lbl">Location</span></div>
-              </div>
-              <div class="sp-doc-spec">Consultant Internal Medicine — Chronic Disease &amp; Lifestyle Disorder Management · KB Clinic, Karaikal</div>
-              <div class="sp-doc-meta">
-                <div class="sp-doc-meta-row"><i class="fas fa-graduation-cap"></i>MD in General Medicine — Internal Medicine</div>
-                <div class="sp-doc-meta-row"><i class="fas fa-chart-line"></i>Thyroid, Cardiac Risk &amp; Metabolic Syndrome</div>
-                <div class="sp-doc-meta-row"><i class="fas fa-id-card"></i>Reg. No. 100034 | ISO 9001:2015</div>
-                <div class="sp-doc-meta-row"><i class="fas fa-map-marker-alt"></i>372, Bharathiyar Road, Karaikal</div>
-              </div>
-              <button class="sp-doc-cta" onclick="openBk()"><i class="fas fa-calendar-check"></i>Book Appointment</button>
-            </div>
-          </div>
-
-          <div class="sp-content">
-            <div class="sp-box rv">
-              <div class="sp-section-title"><i class="fas fa-notes-medical"></i>Conditions Treated — Internal Medicine Doctor in Karaikal</div>
-              <div class="sp-conditions sp-stagger">
-                <div class="sp-cond-item" onclick="openCond('im',0)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&q=80" alt="Kidney Disease">
-                  <div class="sp-cond-overlay" style="background:linear-gradient(160deg,rgba(60,0,90,.5),rgba(120,0,180,.65))"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-procedures"></i></div>
-                    <div class="sp-cond-name">Chronic Kidney Disease</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('im',1)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=400&q=80" alt="Thyroid">
-                  <div class="sp-cond-overlay" style="background:linear-gradient(160deg,rgba(60,0,90,.5),rgba(120,0,180,.65))"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-thermometer"></i></div>
-                    <div class="sp-cond-name">Thyroid Disorders</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('im',2)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1628595351029-c2bf17511435?w=400&q=80" alt="Cardiac">
-                  <div class="sp-cond-overlay" style="background:linear-gradient(160deg,rgba(60,0,90,.5),rgba(120,0,180,.65))"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-heartbeat"></i></div>
-                    <div class="sp-cond-name">Cardiac Risk Management</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('im',3)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?w=400&q=80" alt="Metabolic Syndrome">
-                  <div class="sp-cond-overlay" style="background:linear-gradient(160deg,rgba(60,0,90,.5),rgba(120,0,180,.65))"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-weight"></i></div>
-                    <div class="sp-cond-name">Metabolic Syndrome &amp; Obesity</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('im',4)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80" alt="Lifestyle">
-                  <div class="sp-cond-overlay" style="background:linear-gradient(160deg,rgba(60,0,90,.5),rgba(120,0,180,.65))"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-running"></i></div>
-                    <div class="sp-cond-name">Lifestyle Disorders</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('im',5)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&q=80" alt="Preventive Care">
-                  <div class="sp-cond-overlay" style="background:linear-gradient(160deg,rgba(60,0,90,.5),rgba(120,0,180,.65))"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-shield-virus"></i></div>
-                    <div class="sp-cond-name">Preventive Care &amp; Screening</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('im',6)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&q=80" alt="Fatty Liver">
-                  <div class="sp-cond-overlay" style="background:linear-gradient(160deg,rgba(60,0,90,.5),rgba(120,0,180,.65))"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-flask"></i></div>
-                    <div class="sp-cond-name">Fatty Liver &amp; NAFLD</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('im',7)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1585421514738-01798e348b17?w=400&q=80" alt="Anaemia">
-                  <div class="sp-cond-overlay" style="background:linear-gradient(160deg,rgba(60,0,90,.5),rgba(120,0,180,.65))"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-tint"></i></div>
-                    <div class="sp-cond-name">Anaemia &amp; Blood Disorders</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-                <div class="sp-cond-item" onclick="openCond('im',8)">
-                  <img class="cond-img" src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&q=80" alt="Osteoporosis">
-                  <div class="sp-cond-overlay" style="background:linear-gradient(160deg,rgba(60,0,90,.5),rgba(120,0,180,.65))"></div>
-                  <div class="sp-cond-inner">
-                    <div class="sp-cond-icon"><i class="fas fa-bone"></i></div>
-                    <div class="sp-cond-name">Osteoporosis &amp; Vitamin D</div>
-                  </div>
-                  <span class="sp-cond-tap">LEARN MORE</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="sp-box rv">
-              <div class="sp-section-title"><i class="fas fa-tools"></i>Services Offered</div>
-              <div class="sp-services sp-stagger">
-                <div class="sp-svc-card">
-                  <div class="sp-svc-icon"><i class="fas fa-chart-line"></i></div>
-                  <div class="sp-svc-txt"><h4>Chronic Disease Monitoring</h4><p>Structured long-term management protocols for diabetes, CKD, hypertension, and thyroid.</p></div>
-                </div>
-                <div class="sp-svc-card">
-                  <div class="sp-svc-icon"><i class="fas fa-shield-alt"></i></div>
-                  <div class="sp-svc-txt"><h4>Preventive Health Plans</h4><p>Personalised screening packages — lipid, thyroid, renal, and cardiac profiling with diet counselling.</p></div>
-                </div>
-                <div class="sp-svc-card">
-                  <div class="sp-svc-icon"><i class="fas fa-pills"></i></div>
-                  <div class="sp-svc-txt"><h4>Medication Review &amp; Optimisation</h4><p>Poly-pharmacy review to reduce side effects and improve treatment adherence in complex patients.</p></div>
-                </div>
-                <div class="sp-svc-card">
-                  <div class="sp-svc-icon"><i class="fas fa-dna"></i></div>
-                  <div class="sp-svc-txt"><h4>Thyroid &amp; Hormonal Management</h4><p>TSH, T3, T4, anti-TPO assessment with precise hormone replacement titration and follow-up.</p></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="sp-box rv">
-              <div class="sp-section-title"><i class="fas fa-lightbulb"></i>Internal Medicine Tips from Dr. Ramesh Bala</div>
-              <div class="sp-tips sp-stagger">
-                <div class="sp-tip"><div class="sp-tip-num">1</div><p><strong>Get your TSH tested annually</strong> — thyroid disorders affect 1 in 5 adults and are missed for years due to vague symptoms like fatigue and weight gain.</p></div>
-                <div class="sp-tip"><div class="sp-tip-num">2</div><p><strong>Kidney disease is silent</strong> — creatinine and eGFR testing once a year catches chronic kidney disease before irreversible damage occurs.</p></div>
-                <div class="sp-tip"><div class="sp-tip-num">3</div><p><strong>Know your lipid numbers</strong> — LDL below 100 mg/dL for healthy adults; below 70 for those with diabetes or heart disease history.</p></div>
-                <div class="sp-tip"><div class="sp-tip-num">4</div><p><strong>Sleep 7–8 hours</strong> — chronic sleep deprivation raises cortisol, increases blood pressure, and doubles the risk of type 2 diabetes.</p></div>
-                <div class="sp-tip"><div class="sp-tip-num">5</div><p><strong>Fatty liver is reversible</strong> — with dietary changes and weight reduction of just 7–10%, NAFLD can significantly improve within months.</p></div>
-                <div class="sp-tip"><div class="sp-tip-num">6</div><p><strong>Preventive care saves money</strong> — one annual health checkup costs far less than one week of hospitalisation. Invest in screening, not treatment.</p></div>
-              </div>
-            </div>
-
-            <div class="sp-box rv">
-              <div class="sp-section-title"><i class="fas fa-clock"></i>When Should You See an Internal Medicine Specialist?</div>
-              <div class="sp-timeline sp-stagger">
-                <div class="sp-tl-item"><div class="sp-tl-dot"><i class="fas fa-chart-area"></i></div><div class="sp-tl-txt"><h4>Multiple chronic conditions simultaneously</h4><p>Diabetes + hypertension + high cholesterol require coordinated management to prevent organ damage.</p></div></div>
-                <div class="sp-tl-item"><div class="sp-tl-dot"><i class="fas fa-weight-hanging"></i></div><div class="sp-tl-txt"><h4>Unexplained fatigue, weight gain, or cold intolerance</h4><p>Classic features of hypothyroidism — easily treated once correctly diagnosed with a TSH blood test.</p></div></div>
-                <div class="sp-tl-item"><div class="sp-tl-dot"><i class="fas fa-tint"></i></div><div class="sp-tl-txt"><h4>Abnormal blood test results</h4><p>Elevated creatinine, abnormal liver enzymes, high uric acid — need expert interpretation and a management plan.</p></div></div>
-                <div class="sp-tl-item"><div class="sp-tl-dot"><i class="fas fa-history"></i></div><div class="sp-tl-txt"><h4>Family history of cardiac or metabolic disease</h4><p>Genetic risk combined with lifestyle factors — early screening and preventive intervention is essential.</p></div></div>
-                <div class="sp-tl-item"><div class="sp-tl-dot"><i class="fas fa-calendar-alt"></i></div><div class="sp-tl-txt"><h4>Annual comprehensive screening from age 35+</h4><p>Full metabolic panel, thyroid, renal, lipid, and cardiac risk assessment — the foundation of preventive healthcare.</p></div></div>
-              </div>
-            </div>
-
-            <!-- Dos & Don'ts: Internal Medicine -->
-            <div class="sp-box rv">
-              <div class="sp-section-title"><i class="fas fa-clipboard-check"></i>Internal Medicine — Dos &amp; Don'ts</div>
-              <div class="sp-dnd-wrap">
-                <div class="sp-dnd-col sp-dnd-do">
-                  <div class="sp-dnd-header"><i class="fas fa-check-circle"></i>Do's — Long-Term Disease Management</div>
-                  <div class="sp-dnd-item"><i class="fas fa-check"></i>Take all medications consistently — for diabetes, BP, thyroid, never skip doses</div>
-                  <div class="sp-dnd-item"><i class="fas fa-check"></i>Monitor blood pressure at home — keep a log to share with your doctor at every visit</div>
-                  <div class="sp-dnd-item"><i class="fas fa-check"></i>Get HbA1c tested every 3 months if diabetic — it shows your 3-month average sugar control</div>
-                  <div class="sp-dnd-item"><i class="fas fa-check"></i>Test TSH annually — thyroid disorders are among the most under-diagnosed conditions</div>
-                  <div class="sp-dnd-item"><i class="fas fa-check"></i>Check kidney function (creatinine/eGFR) yearly if you have diabetes or hypertension</div>
-                  <div class="sp-dnd-item"><i class="fas fa-check"></i>Invest in annual preventive screening — it costs a fraction of hospitalisation</div>
-                </div>
-                <div class="sp-dnd-col sp-dnd-dont">
-                  <div class="sp-dnd-header"><i class="fas fa-times-circle"></i>Don'ts — Avoid These Mistakes</div>
-                  <div class="sp-dnd-item"><i class="fas fa-times"></i>Don't stop medicines when you "feel normal" — chronic disease management is lifelong</div>
-                  <div class="sp-dnd-item"><i class="fas fa-times"></i>Avoid self-adjusting insulin or BP medication without your doctor's guidance</div>
-                  <div class="sp-dnd-item"><i class="fas fa-times"></i>Don't ignore fatigue, unusual thirst, or swollen legs — they signal systemic disease</div>
-                  <div class="sp-dnd-item"><i class="fas fa-times"></i>Avoid crash diets — they destabilise blood sugar and harm kidney function</div>
-                  <div class="sp-dnd-item"><i class="fas fa-times"></i>Don't rely solely on symptoms to judge disease control — lab results are the gold standard</div>
-                  <div class="sp-dnd-item"><i class="fas fa-times"></i>Avoid delaying annual cardiac and metabolic screening if you have a family history</div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div><!-- /panel-2 -->
-
-    </div><!-- /sp-panels -->
-  </div>
-</section>
 
 <!-- ======= DOCTORS ======= -->
 <section id="doctors" aria-label="Our Doctors – ENT Specialist and MD Consultant in Karaikal">
@@ -2169,7 +1545,7 @@ body{visibility:hidden}
             <li><i class="fas fa-check-circle"></i>Knowledgeable staff for medication counselling and adherence support</li>
             <li><i class="fas fa-check-circle"></i>Cold chain maintained for temperature-sensitive medications</li>
           </ul>
-          <a href="#contact" class="prem-btn"><i class="fas fa-pills"></i>Visit Pharmacy</a>
+          <button class="prem-btn" onclick="openBk()"><i class="fas fa-pills"></i>Visit Pharmacy</button>
         </div>
       </div>
 
@@ -2198,7 +1574,7 @@ body{visibility:hidden}
             <li><i class="fas fa-check-circle"></i>Lipid profile, cardiac markers, uric acid</li>
             <li><i class="fas fa-check-circle"></i>Home sample collection available — call 89259 29922</li>
           </ul>
-          <a href="#contact" class="prem-btn"><i class="fas fa-microscope"></i>View Lab Services</a>
+          <button class="prem-btn" onclick="openBk()"><i class="fas fa-microscope"></i>View Lab Services</button>
         </div>
       </div>
 
@@ -2227,7 +1603,7 @@ body{visibility:hidden}
             <li><i class="fas fa-check-circle"></i>Paediatric hearing assessment and rehabilitation</li>
             <li><i class="fas fa-check-circle"></i>Tinnitus management counselling and devices</li>
           </ul>
-          <a href="#hearing-aid" class="prem-btn"><i class="fas fa-assistive-listening-systems"></i>Explore Hearing Solutions</a>
+          <button class="prem-btn" onclick="openBk()"><i class="fas fa-assistive-listening-systems"></i>Explore Hearing Solutions</button>
         </div>
       </div>
 
@@ -2366,7 +1742,6 @@ body{visibility:hidden}
             <div style="font-size:.77rem;color:rgba(255,255,255,.65);margin-bottom:9px;">M.S. (ENT), M.B.A. · Professor – ENT · Reg. No. 84617</div>
             <div style="display:flex;gap:7px;flex-wrap:wrap;">
               <span style="background:rgba(125,249,255,.14);border:1px solid rgba(125,249,255,.28);color:#7DF9FF;padding:3px 10px;border-radius:50px;font-size:.67rem;font-weight:700;">ENT Surgeon</span>
-              <span style="background:rgba(125,249,255,.14);border:1px solid rgba(125,249,255,.28);color:#7DF9FF;padding:3px 10px;border-radius:50px;font-size:.67rem;font-weight:700;">Audiologist</span>
               <span style="background:rgba(125,249,255,.14);border:1px solid rgba(125,249,255,.28);color:#7DF9FF;padding:3px 10px;border-radius:50px;font-size:.67rem;font-weight:700;">Hearing Aid Expert</span>
             </div>
           </div>
@@ -2418,46 +1793,56 @@ body{visibility:hidden}
         <div style="color:rgba(255,255,255,.6);font-size:.81rem;">Each style fitted only after a proper audiogram — the right aid for your exact hearing loss pattern</div>
       </div>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px;" class="ha-types-grid">
-        <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:22px 14px;text-align:center;transition:all .3s;cursor:default;" onmouseover="this.style.background='rgba(255,255,255,.14)';this.style.transform='translateY(-4px)'" onmouseout="this.style.background='rgba(255,255,255,.07)';this.style.transform='none'">
-          <div style="width:50px;height:50px;background:linear-gradient(135deg,rgba(125,249,255,.18),rgba(0,229,204,.18));border:1px solid rgba(125,249,255,.3);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 13px;"><i class="fas fa-headphones" style="color:#7DF9FF;font-size:1.1rem;"></i></div>
-          <div style="font-weight:800;color:white;font-size:.87rem;margin-bottom:4px;">CIC</div>
-          <div style="font-size:.72rem;color:rgba(255,255,255,.6);margin-bottom:7px;">Completely In Canal</div>
-          <div style="font-size:.69rem;color:rgba(255,255,255,.45);line-height:1.55;">Most invisible · Deep canal fit · Natural sound quality</div>
+        <!-- CIC -->
+        <div class="ha-type-card" onmouseover="this.style.background='rgba(255,255,255,.14)';this.style.transform='translateY(-4px)'" onmouseout="this.style.background='rgba(255,255,255,.07)';this.style.transform='none'">
+          <div class="ha-type-img-wrap"><img src="assets/images/hearing-aids/CIC.png" alt="CIC – Completely In Canal Hearing Aid" class="ha-type-img" loading="lazy"></div>
+          <div style="font-weight:800;color:white;font-size:.9rem;margin-bottom:4px;">CIC</div>
+          <div style="font-size:.73rem;color:#7DF9FF;margin-bottom:7px;font-weight:600;">Completely In Canal</div>
+          <div style="font-size:.69rem;color:rgba(255,255,255,.5);line-height:1.55;">Most invisible · Deep canal fit · Natural sound quality</div>
         </div>
-        <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:22px 14px;text-align:center;transition:all .3s;cursor:default;" onmouseover="this.style.background='rgba(255,255,255,.14)';this.style.transform='translateY(-4px)'" onmouseout="this.style.background='rgba(255,255,255,.07)';this.style.transform='none'">
-          <div style="width:50px;height:50px;background:linear-gradient(135deg,rgba(125,249,255,.18),rgba(0,229,204,.18));border:1px solid rgba(125,249,255,.3);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 13px;"><i class="fas fa-ear-listen" style="color:#7DF9FF;font-size:1.1rem;"></i></div>
-          <div style="font-weight:800;color:white;font-size:.87rem;margin-bottom:4px;">ITC</div>
-          <div style="font-size:.72rem;color:rgba(255,255,255,.6);margin-bottom:7px;">In The Canal</div>
-          <div style="font-size:.69rem;color:rgba(255,255,255,.45);line-height:1.55;">Custom moulded · Easy handling · Discreet appearance</div>
+        <!-- ITC -->
+        <div class="ha-type-card" onmouseover="this.style.background='rgba(255,255,255,.14)';this.style.transform='translateY(-4px)'" onmouseout="this.style.background='rgba(255,255,255,.07)';this.style.transform='none'">
+          <div class="ha-type-img-wrap"><img src="assets/images/hearing-aids/ITC.png" alt="ITC – In The Canal Hearing Aid" class="ha-type-img" loading="lazy"></div>
+          <div style="font-weight:800;color:white;font-size:.9rem;margin-bottom:4px;">ITC</div>
+          <div style="font-size:.73rem;color:#7DF9FF;margin-bottom:7px;font-weight:600;">In The Canal</div>
+          <div style="font-size:.69rem;color:rgba(255,255,255,.5);line-height:1.55;">Custom moulded · Easy handling · Discreet appearance</div>
         </div>
-        <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:22px 14px;text-align:center;transition:all .3s;cursor:default;" onmouseover="this.style.background='rgba(255,255,255,.14)';this.style.transform='translateY(-4px)'" onmouseout="this.style.background='rgba(255,255,255,.07)';this.style.transform='none'">
-          <div style="width:50px;height:50px;background:linear-gradient(135deg,rgba(125,249,255,.18),rgba(0,229,204,.18));border:1px solid rgba(125,249,255,.3);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 13px;"><i class="fas fa-assistive-listening-systems" style="color:#7DF9FF;font-size:1.1rem;"></i></div>
-          <div style="font-weight:800;color:white;font-size:.87rem;margin-bottom:4px;">BTE</div>
-          <div style="font-size:.72rem;color:rgba(255,255,255,.6);margin-bottom:7px;">Behind The Ear</div>
-          <div style="font-size:.69rem;color:rgba(255,255,255,.45);line-height:1.55;">Most powerful · Durable · Suits all loss levels</div>
+        <!-- BTE -->
+        <div class="ha-type-card" onmouseover="this.style.background='rgba(255,255,255,.14)';this.style.transform='translateY(-4px)'" onmouseout="this.style.background='rgba(255,255,255,.07)';this.style.transform='none'">
+          <div class="ha-type-img-wrap"><img src="assets/images/hearing-aids/BTE.png" alt="BTE – Behind The Ear Hearing Aid" class="ha-type-img" loading="lazy"></div>
+          <div style="font-weight:800;color:white;font-size:.9rem;margin-bottom:4px;">BTE</div>
+          <div style="font-size:.73rem;color:#7DF9FF;margin-bottom:7px;font-weight:600;">Behind The Ear</div>
+          <div style="font-size:.69rem;color:rgba(255,255,255,.5);line-height:1.55;">Most powerful · Durable · Suits all loss levels</div>
         </div>
-        <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:22px 14px;text-align:center;transition:all .3s;cursor:default;" onmouseover="this.style.background='rgba(255,255,255,.14)';this.style.transform='translateY(-4px)'" onmouseout="this.style.background='rgba(255,255,255,.07)';this.style.transform='none'">
-          <div style="width:50px;height:50px;background:linear-gradient(135deg,rgba(125,249,255,.18),rgba(0,229,204,.18));border:1px solid rgba(125,249,255,.3);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 13px;"><i class="fas fa-mobile-alt" style="color:#7DF9FF;font-size:1.1rem;"></i></div>
-          <div style="font-weight:800;color:white;font-size:.87rem;margin-bottom:4px;">Pocket</div>
-          <div style="font-size:.72rem;color:rgba(255,255,255,.6);margin-bottom:7px;">Pocket Model</div>
-          <div style="font-size:.69rem;color:rgba(255,255,255,.45);line-height:1.55;">Easy controls · Affordable · Ideal for elderly patients</div>
-        </div>
-      </div>
-
-      <!-- Accessories strip -->
-      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:28px;">
-        <div style="font-size:.68rem;font-weight:700;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;"><i class="fas fa-tools" style="margin-right:5px;color:#7DF9FF;"></i>Accessories:</div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;">
-          <span style="background:rgba(125,249,255,.11);border:1px solid rgba(125,249,255,.22);color:#7DF9FF;padding:4px 12px;border-radius:50px;font-size:.7rem;font-weight:600;">Batteries</span>
-          <span style="background:rgba(125,249,255,.11);border:1px solid rgba(125,249,255,.22);color:#7DF9FF;padding:4px 12px;border-radius:50px;font-size:.7rem;font-weight:600;">Wax Guards</span>
-          <span style="background:rgba(125,249,255,.11);border:1px solid rgba(125,249,255,.22);color:#7DF9FF;padding:4px 12px;border-radius:50px;font-size:.7rem;font-weight:600;">Power Cords</span>
-          <span style="background:rgba(125,249,255,.11);border:1px solid rgba(125,249,255,.22);color:#7DF9FF;padding:4px 12px;border-radius:50px;font-size:.7rem;font-weight:600;">Hearing Aid Cases</span>
-          <span style="background:rgba(125,249,255,.11);border:1px solid rgba(125,249,255,.22);color:#7DF9FF;padding:4px 12px;border-radius:50px;font-size:.7rem;font-weight:600;">Cleaning Brushes</span>
-          <span style="background:rgba(125,249,255,.11);border:1px solid rgba(125,249,255,.22);color:#7DF9FF;padding:4px 12px;border-radius:50px;font-size:.7rem;font-weight:600;">Tubes &amp; Cones</span>
+        <!-- Pocket -->
+        <div class="ha-type-card" onmouseover="this.style.background='rgba(255,255,255,.14)';this.style.transform='translateY(-4px)'" onmouseout="this.style.background='rgba(255,255,255,.07)';this.style.transform='none'">
+          <div class="ha-type-img-wrap"><img src="assets/images/hearing-aids/Pocket.png" alt="Pocket Hearing Aid – Body Worn Model" class="ha-type-img" loading="lazy"></div>
+          <div style="font-weight:800;color:white;font-size:.9rem;margin-bottom:4px;">Pocket</div>
+          <div style="font-size:.73rem;color:#7DF9FF;margin-bottom:7px;font-weight:600;">Pocket Model</div>
+          <div style="font-size:.69rem;color:rgba(255,255,255,.5);line-height:1.55;">Easy controls · Affordable · Ideal for elderly patients</div>
         </div>
       </div>
 
-      <!-- CTA -->
+      <!-- Accessories section -->
+      <div style="margin-bottom:28px;">
+        <!-- Header -->
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
+          <i class="fas fa-tools" style="color:#7DF9FF;font-size:.8rem;"></i>
+          <span style="font-size:.72rem;font-weight:800;color:#7DF9FF;text-transform:uppercase;letter-spacing:.08em;">Accessories</span>
+          <span style="font-size:.65rem;color:rgba(255,255,255,.38);font-style:italic;">— Click any item to view image</span>
+        </div>
+        <p style="font-size:.71rem;color:rgba(255,255,255,.42);margin:0 0 13px;"><i class="fas fa-hand-pointer" style="margin-right:5px;color:rgba(125,249,255,.6);"></i>Tap or click an accessory to view product image and details.</p>
+        <!-- Pills row -->
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+          <button class="acc-chip" role="button" tabindex="0" onclick="openAccModal(0)" style="background:rgba(125,249,255,.10);border:1.5px solid rgba(125,249,255,.38);color:#7DF9FF;border-radius:50px;padding:8px 18px;font-size:.76rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .18s,box-shadow .2s,border-color .2s;white-space:nowrap;font-family:inherit;line-height:1;">🔋 Batteries</button>
+          <button class="acc-chip" role="button" tabindex="0" onclick="openAccModal(1)" style="background:rgba(125,249,255,.10);border:1.5px solid rgba(125,249,255,.38);color:#7DF9FF;border-radius:50px;padding:8px 18px;font-size:.76rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .18s,box-shadow .2s,border-color .2s;white-space:nowrap;font-family:inherit;line-height:1;">🛡️ Wax Guards</button>
+          <button class="acc-chip" role="button" tabindex="0" onclick="openAccModal(2)" style="background:rgba(125,249,255,.10);border:1.5px solid rgba(125,249,255,.38);color:#7DF9FF;border-radius:50px;padding:8px 18px;font-size:.76rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .18s,box-shadow .2s,border-color .2s;white-space:nowrap;font-family:inherit;line-height:1;">🔌 Power Cords</button>
+          <button class="acc-chip" role="button" tabindex="0" onclick="openAccModal(3)" style="background:rgba(125,249,255,.10);border:1.5px solid rgba(125,249,255,.38);color:#7DF9FF;border-radius:50px;padding:8px 18px;font-size:.76rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .18s,box-shadow .2s,border-color .2s;white-space:nowrap;font-family:inherit;line-height:1;">📦 Hearing Aid Cases</button>
+          <button class="acc-chip" role="button" tabindex="0" onclick="openAccModal(4)" style="background:rgba(125,249,255,.10);border:1.5px solid rgba(125,249,255,.38);color:#7DF9FF;border-radius:50px;padding:8px 18px;font-size:.76rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .18s,box-shadow .2s,border-color .2s;white-space:nowrap;font-family:inherit;line-height:1;">🧹 Cleaning Brushes</button>
+          <button class="acc-chip" role="button" tabindex="0" onclick="openAccModal(5)" style="background:rgba(125,249,255,.10);border:1.5px solid rgba(125,249,255,.38);color:#7DF9FF;border-radius:50px;padding:8px 18px;font-size:.76rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .18s,box-shadow .2s,border-color .2s;white-space:nowrap;font-family:inherit;line-height:1;">🎧 Tubes &amp; Cones</button>
+        </div>
+      </div>
+            <!-- CTA -->
       <div style="text-align:center;">
         <div style="color:rgba(255,255,255,.62);font-size:.83rem;margin-bottom:16px;">Every hearing aid is fitted after a proper audiogram — visit us for a <strong style="color:#7DF9FF;">free hearing consultation</strong>.</div>
         <a href="https://wa.me/918925929922?text=I'm%20interested%20in%20a%20Hearing%20Aid%20consultation%20at%20A.M.%20Centre" target="_blank" style="display:inline-flex;align-items:center;gap:9px;background:white;color:#0057B8;padding:14px 32px;border-radius:50px;font-weight:800;font-size:.9rem;text-decoration:none;box-shadow:0 8px 30px rgba(0,0,0,.35);transition:all .3s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 14px 42px rgba(0,0,0,.4)';" onmouseout="this.style.transform='none';this.style.boxShadow='0 8px 30px rgba(0,0,0,.35)';"><i class="fab fa-whatsapp" style="color:#25D366;font-size:1.1rem;"></i>Book Free Hearing Consultation on WhatsApp</a>
@@ -2465,6 +1850,61 @@ body{visibility:hidden}
     </div>
   </div>
 </section>
+
+
+<!-- ── Accessory Modal ──────────────────────────────────── -->
+<div id="accModal"
+     style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;
+            z-index:99999;background:rgba(1,22,39,.85);
+            align-items:center;justify-content:center;
+            padding:20px;opacity:0;transition:opacity .25s ease;"
+     onclick="if(event.target===this)closeAccModal()">
+  <div id="accModalBox"
+       style="background:#ffffff;border-radius:20px;max-width:480px;width:100%;
+              box-shadow:0 28px 90px rgba(0,0,0,.6);overflow:hidden;
+              position:relative;transform:scale(.9);transition:transform .28s ease;">
+    <!-- Close -->
+    <button onclick="closeAccModal()" aria-label="Close"
+            style="position:absolute;top:10px;right:12px;background:rgba(0,0,0,.12);
+                   border:none;border-radius:50%;width:34px;height:34px;
+                   font-size:1.4rem;line-height:34px;text-align:center;
+                   cursor:pointer;color:#333;z-index:10;padding:0;">
+      &times;
+    </button>
+    <!-- Image area -->
+    <div style="background:linear-gradient(135deg,#e8f4ff,#f4f9ff);
+                display:flex;align-items:center;justify-content:center;
+                min-height:240px;padding:28px;">
+      <img id="accModalImg" src="" alt=""
+           style="max-width:100%;max-height:240px;width:auto;height:auto;
+                  object-fit:contain;display:block;border-radius:10px;">
+    </div>
+    <!-- Body -->
+    <div style="padding:20px 28px 26px;">
+      <h3 id="accModalTitle"
+          style="margin:0 0 8px;font-size:1.1rem;font-weight:800;color:#0057B8;"></h3>
+      <p id="accModalDesc"
+         style="margin:0 0 20px;font-size:.84rem;color:#4a5568;line-height:1.65;"></p>
+      <!-- Nav -->
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+        <button onclick="navAcc(-1)"
+                style="background:#0057B8;color:#fff;border:none;border-radius:50px;
+                       padding:8px 20px;font-size:.78rem;font-weight:700;cursor:pointer;">
+          &#8592; Prev
+        </button>
+        <span id="accCounter"
+              style="font-size:.78rem;font-weight:700;color:#0057B8;
+                     background:#e8f0ff;padding:4px 14px;border-radius:50px;">1 / 6</span>
+        <button onclick="navAcc(1)"
+                style="background:#0057B8;color:#fff;border:none;border-radius:50px;
+                       padding:8px 20px;font-size:.78rem;font-weight:700;cursor:pointer;">
+          Next &#8594;
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ── /Accessory Modal ──────────────────────────────────── -->
 
 <footer id="contact" role="contentinfo" aria-label="KB Clinic Footer – Contact, Address and Quick Links">
   <div class="ft-grid">
@@ -2485,8 +1925,8 @@ body{visibility:hidden}
       </address>
       <div class="ft-soc">
         <a href="https://wa.me/918925929922" target="_blank" class="sc-btn"><i class="fab fa-whatsapp"></i></a>
-        <a href="#" class="sc-btn"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="sc-btn"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/kbclinickaraikal" target="_blank" rel="noopener" aria-label="KB Clinic on Facebook" class="sc-btn"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/kbclinickaraikal" target="_blank" rel="noopener" aria-label="KB Clinic on Instagram" class="sc-btn"><i class="fab fa-instagram"></i></a>
         <a href="tel:+918925929922" class="sc-btn"><i class="fas fa-phone"></i></a>
       </div>
     </div>
@@ -2505,11 +1945,11 @@ body{visibility:hidden}
     <div class="ft-col">
       <h4>Contact</h4>
       <ul>
-        <li><a href="#">372, Bharathiyar Road, Kovilpathu, Karaikal – 609 602</a></li>
+        <li><a href="https://maps.google.com/?q=372+Bharathiyar+Road+Kovilpathu+Karaikal+609602" target="_blank" rel="noopener" aria-label="Open location in Google Maps">372, Bharathiyar Road, Kovilpathu, Karaikal – 609 602</a></li>
         <li><a href="tel:+918925929922">📱 89259 29922</a></li>
         <li><a href="tel:04368224815">📞 04368 – 224815</a></li>
-        <li><a href="#">🕘 Mon–Sat: 9AM–1PM, 5–8:30PM</a></li>
-        <li><a href="#">📅 Sunday: By Appointment</a></li>
+        <li><span style="color:rgba(255,255,255,.75);">🕘 Mon–Sat: 9AM–1PM, 5–8:30PM</span></li>
+        <li><span style="color:rgba(255,255,255,.75);">📅 Sunday: By Appointment</span></li>
       </ul>
     </div>
   </div>
@@ -2603,7 +2043,7 @@ body{visibility:hidden}
     <button class="mmf-btn" onclick="switchMode('internal')" style="background:linear-gradient(135deg,#1a0080,#3730a3)"><i class="fas fa-heartbeat"></i>MD</button>
   </div>
 </div>
-<script src="assets/js/kb-clinic.min.js?v=20260617" defer></script>
+<script src="assets/js/kb-clinic.min.js?v=20260631" defer></script>
 <script>
 /* KB Clinic Page Loader Dismiss */
 (function(){
