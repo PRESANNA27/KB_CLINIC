@@ -1,63 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        xsi:schemaLocation="
+          http://www.sitemaps.org/schemas/sitemap/0.9
+          http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+          http://www.google.com/schemas/sitemap-image/1.1
+          http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
 
-  <!-- Homepage -->
+  <!-- ══ Homepage (canonical www) ══════════════════════════════════════════ -->
   <url>
-    <loc>https://kbclinickkl.com/</loc>
-    <lastmod>2026-06-11</lastmod>
+    <loc>https://www.kbclinickkl.com/</loc>
+    <lastmod>2026-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+
+    <!-- Organization Logo — critical for Google logo indexing -->
+    <image:image>
+      <image:loc>https://www.kbclinickkl.com/assets/images/icons/logo.png</image:loc>
+      <image:title>KB Clinic Logo – Best Multi-Specialty Clinic in Karaikal</image:title>
+      <image:caption>KB Clinic Karaikal – ENT, General Physician, Diabetology, Hearing Aid &amp; Diagnostics Centre</image:caption>
+    </image:image>
+
+    <!-- Logo 512 (square, for schema / Knowledge Panel) -->
+    <image:image>
+      <image:loc>https://www.kbclinickkl.com/assets/images/icons/logo-512.png</image:loc>
+      <image:title>KB Clinic – Organization Logo 512×512</image:title>
+      <image:caption>KB Clinic Karaikal official logo, ISO 9001:2015 certified clinic</image:caption>
+    </image:image>
+
+    <!-- Hero Banner -->
+    <image:image>
+      <image:loc>https://www.kbclinickkl.com/assets/images/banners/hero-clinic-main.webp</image:loc>
+      <image:title>KB Clinic Karaikal – Best Multi-Specialty Healthcare Centre</image:title>
+      <image:caption>KB Clinic at 372, Bharathiyar Road, Kovilpathu, Karaikal – ENT, General Physician, Diabetes &amp; Hearing Aid services</image:caption>
+    </image:image>
+
+    <!-- Doctor images -->
+    <image:image>
+      <image:loc>https://www.kbclinickkl.com/assets/images/doctors/doctor-ganesh-bala.webp</image:loc>
+      <image:title>Prof. Dr. A. Ganesh Bala – Best ENT Specialist in Karaikal</image:title>
+      <image:caption>Prof. Dr. A. Ganesh Bala, M.S.(ENT) – ENT Specialist at KB Clinic Karaikal. Reg. No. 84617</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://www.kbclinickkl.com/assets/images/doctors/doctor-ramesh-bala.webp</image:loc>
+      <image:title>Dr. A. Ramesh Bala – Best Diabetologist &amp; General Physician in Karaikal</image:title>
+      <image:caption>Dr. A. Ramesh Bala, MD (General Medicine), F.Diab (UK) – Diabetologist at KB Clinic Karaikal. Reg. No. 100034</image:caption>
+    </image:image>
   </url>
 
-  <!-- Section anchors — indexed by Google as sub-destinations -->
+  <!-- ══ Section anchors ════════════════════════════════════════════════════ -->
   <url>
-    <loc>https://kbclinickkl.com/#doctors</loc>
-    <lastmod>2026-06-11</lastmod>
+    <loc>https://www.kbclinickkl.com/#doctors</loc>
+    <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://kbclinickkl.com/#expert-panel</loc>
-    <lastmod>2026-06-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://kbclinickkl.com/#services</loc>
-    <lastmod>2026-06-11</lastmod>
+    <loc>https://www.kbclinickkl.com/#services</loc>
+    <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://kbclinickkl.com/#assoc</loc>
-    <lastmod>2026-06-11</lastmod>
+    <loc>https://www.kbclinickkl.com/#hearing-aid</loc>
+    <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://kbclinickkl.com/#hearing-aid</loc>
-    <lastmod>2026-06-11</lastmod>
+    <loc>https://www.kbclinickkl.com/#assoc</loc>
+    <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://kbclinickkl.com/#gallery</loc>
-    <lastmod>2026-06-11</lastmod>
+    <loc>https://www.kbclinickkl.com/#expert-panel</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.kbclinickkl.com/#gallery</loc>
+    <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://kbclinickkl.com/#contact</loc>
-    <lastmod>2026-06-11</lastmod>
+    <loc>https://www.kbclinickkl.com/#contact</loc>
+    <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
